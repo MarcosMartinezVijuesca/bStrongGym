@@ -55,7 +55,6 @@ public class MemberService {
         Member member = memberRepository.findById(id)
                 .orElseThrow(MemberNotFoundException::new);
 
-
         modelMapper.map(memberInDto, member);
         member.setId(id);
 
