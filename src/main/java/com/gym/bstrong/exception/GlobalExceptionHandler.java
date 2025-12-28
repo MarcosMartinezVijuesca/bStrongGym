@@ -17,12 +17,6 @@ public class GlobalExceptionHandler {
 
     private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler(MemberNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleMemberNotFound(MemberNotFoundException ex) {
-        logger.error("Member not found exception", ex);
-        return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
-    }
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationErrors(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
@@ -42,5 +36,17 @@ public class GlobalExceptionHandler {
                 ErrorResponse.generalError(500, "Internal Server Error", "An unexpected error occurred"),
                 HttpStatus.INTERNAL_SERVER_ERROR
         );
+    }
+
+    @ExceptionHandler(MemberNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleMemberNotFound(MemberNotFoundException ex) {
+        logger.error("Member not found exception", ex);
+        return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(MonitorNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleMonitorNotFound(MonitorNotFoundException ex) {
+        logger.error("Monitor not found exception", ex);
+        return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
     }
 }
