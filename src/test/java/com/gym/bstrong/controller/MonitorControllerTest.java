@@ -98,7 +98,6 @@ public class MonitorControllerTest {
 
     @Test
     void modifyMonitor_ShouldReturn200_WhenExists() throws Exception {
-        // Datos de entrada (lo que enviamos)
         MonitorInDto input = MonitorInDto.builder()
                 .name("Laura Modificada")
                 .dni("12345678A")

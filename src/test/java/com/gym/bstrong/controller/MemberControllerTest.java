@@ -143,7 +143,6 @@ public class MemberControllerTest {
 
     @Test
     void deleteMember_ShouldReturn404_WhenNotFound() throws Exception {
-        // doThrow para métodos void
         doThrow(new MemberNotFoundException()).when(memberService).deleteMember(99L);
 
         mockMvc.perform(delete("/members/99"))
