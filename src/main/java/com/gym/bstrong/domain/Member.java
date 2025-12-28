@@ -20,20 +20,27 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column
     @NotNull
     private String firstName;
+
     @Column
     @NotNull
     private String lastName;
+
     @Column
     private LocalDate birthDate;
+
     @Column(name = "registration_date")
     private LocalDate registrationDate;
+
     @Column
     private boolean active;
+
     @Column
     private float weight;
+
     @Column
     @Email
     private String email;

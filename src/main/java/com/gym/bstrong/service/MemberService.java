@@ -26,17 +26,14 @@ public class MemberService {
     public List<MemberOutDto> findAll(String firstName, String lastName, Boolean active) {
         List<Member> members;
 
-
         if (firstName == null && lastName == null && active == null) {
             members = memberRepository.findAll();
         } else {
             members = memberRepository.findByFilters(firstName, lastName, active);
         }
 
-
         return modelMapper.map(members, new TypeToken<List<MemberOutDto>>() {}.getType());
     }
-
 
      public MemberOutDto findById(long id) throws MemberNotFoundException {
         Member member = memberRepository.findById(id)
@@ -44,18 +41,12 @@ public class MemberService {
         return modelMapper.map(member, MemberOutDto.class);
     }
 
-
-
     public MemberOutDto addMember(MemberInDto memberInDto) {
-
         Member member = modelMapper.map(memberInDto, Member.class);
 
-//        member.setActive(true);
         member.setRegistrationDate(LocalDate.now());
 
         Member newMember = memberRepository.save(member);
-
-
         return modelMapper.map(newMember, MemberOutDto.class);
     }
 
@@ -67,12 +58,10 @@ public class MemberService {
 
         modelMapper.map(memberInDto, member);
         member.setId(id);
-        Member modifiedMember = memberRepository.save(member);
 
+        Member modifiedMember = memberRepository.save(member);
         return modelMapper.map(modifiedMember, MemberOutDto.class);
     }
-
-
 
     public void deleteMember(long id) throws MemberNotFoundException {
         Member member = memberRepository.findById(id)
