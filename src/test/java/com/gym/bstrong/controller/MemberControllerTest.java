@@ -17,6 +17,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -90,5 +92,61 @@ public class MemberControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(invalidInput)))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void modifyMember_ShouldReturn200_WhenExists() throws Exception {
+        MemberInDto input = new MemberInDto("Juan", "Cambio", LocalDate.now(), true, 80f, "juan@mail.com");
+        MemberOutDto output = new MemberOutDto();
+        output.setId(1L);
+        output.setFirstName("Juan");
+        output.setLastName("Cambio");
+
+        when(memberService.modifyMember(eq(1L), any(MemberInDto.class))).thenReturn(output);
+
+        mockMvc.perform(put("/members/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(input)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.lastName").value("Cambio"));
+    }
+
+    @Test
+    void modifyMember_ShouldReturn400_WhenInvalidData() throws Exception {
+        MemberInDto invalidInput = new MemberInDto(); // Nombre null
+
+        mockMvc.perform(put("/members/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(invalidInput)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void modifyMember_ShouldReturn404_WhenNotFound() throws Exception {
+        MemberInDto input = new MemberInDto("Juan", "Perez", LocalDate.now(), true, 80f, "juan@mail.com");
+
+        when(memberService.modifyMember(eq(99L), any(MemberInDto.class)))
+                .thenThrow(new MemberNotFoundException());
+
+        mockMvc.perform(put("/members/99")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(input)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void deleteMember_ShouldReturn204_WhenExists() throws Exception {
+
+        mockMvc.perform(delete("/members/1"))
+                .andExpect(status().isNoContent()); // 204
+    }
+
+    @Test
+    void deleteMember_ShouldReturn404_WhenNotFound() throws Exception {
+        // doThrow para métodos void
+        doThrow(new MemberNotFoundException()).when(memberService).deleteMember(99L);
+
+        mockMvc.perform(delete("/members/99"))
+                .andExpect(status().isNotFound());
     }
 }

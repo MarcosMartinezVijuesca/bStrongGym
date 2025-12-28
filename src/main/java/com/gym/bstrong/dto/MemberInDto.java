@@ -1,6 +1,7 @@
 package com.gym.bstrong.dto;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
@@ -13,13 +14,14 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class MemberInDto {
-    @NotNull(message = "El nombre es obligatorio")
+    @NotNull(message = "Name is mandatory")
     private String firstName;
-    @NotNull(message = "El apellido es obligatorio")
+    @NotNull(message = "Last name is mandatory")
     private String lastName;
     private LocalDate birthDate;
     private boolean active;
+    @Min(value = 0, message = "weight must be higher than 0")
     private float weight;
-    @Email(message = "Email con formato incorrecto")
+    @Email(message = "Incorrect format for email")
     private String email;
 }
