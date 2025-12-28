@@ -124,7 +124,6 @@ public class MonitorControllerTest {
 
     @Test
     void modifyMonitor_ShouldReturn400_WhenInvalidData() throws Exception {
-        // DNI incorrecto para forzar el error
         MonitorInDto invalidInput = MonitorInDto.builder()
                 .name("Laura")
                 .dni("123")
