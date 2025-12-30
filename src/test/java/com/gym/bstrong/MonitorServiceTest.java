@@ -35,8 +35,8 @@ public class MonitorServiceTest {
 
     @Test
     public void testFindAll() {
-        Monitor monitor1 = new Monitor(1L, "Laura", "12345678A", LocalDate.now(), 1500f, true, "Yoga");
-        Monitor monitor2 = new Monitor(2L, "Pedro", "87654321B", LocalDate.now(), 1600f, false, "Crossfit");
+        Monitor monitor1 = new Monitor(1L, "Laura", "12345678A", LocalDate.now(), 1500f, true, "Yoga", null);
+        Monitor monitor2 = new Monitor(2L, "Pedro", "87654321B", LocalDate.now(), 1600f, false, "Crossfit", null);
         List<Monitor> mockMonitors = List.of(monitor1, monitor2);
 
         MonitorOutDto dto1 = new MonitorOutDto(1L, "Laura", "12345678A", "Yoga", true, LocalDate.now());
@@ -62,7 +62,7 @@ public class MonitorServiceTest {
         mappedMonitor.setName("Laura");
         mappedMonitor.setDni("12345678A");
 
-        Monitor savedMonitor = new Monitor(10L, "Laura", "12345678A", LocalDate.now(), 1500f, true, "Yoga");
+        Monitor savedMonitor = new Monitor(10L, "Laura", "12345678A", LocalDate.now(), 1500f, true, "Yoga", null);
 
         MonitorOutDto outputDto = new MonitorOutDto(10L, "Laura", "12345678A", "Yoga", true, LocalDate.now());
 

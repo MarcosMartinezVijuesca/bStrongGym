@@ -87,7 +87,7 @@ public class MonitorControllerTest {
     void addMonitor_ShouldReturn400_WhenInvalidData() throws Exception {
         MonitorInDto invalidInput = MonitorInDto.builder()
                 .name("Laura")
-                .dni("123") // DNI inválido (muy corto)
+                .dni("123")
                 .build();
 
         mockMvc.perform(post("/monitors")

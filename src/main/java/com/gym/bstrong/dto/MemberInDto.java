@@ -2,6 +2,7 @@ package com.gym.bstrong.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +15,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class MemberInDto {
-    @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory and cannot be empty")
     private String firstName;
-    @NotNull(message = "Last name is mandatory")
+    @NotBlank(message = "Last name is mandatory and cannot be empty")
     private String lastName;
     private LocalDate birthDate;
     private boolean active;

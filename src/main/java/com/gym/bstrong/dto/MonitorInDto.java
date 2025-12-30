@@ -1,6 +1,7 @@
 package com.gym.bstrong.dto;
 
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
@@ -14,9 +15,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class MonitorInDto {
-    @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory and cannot be empty")
     private String name;
-    @NotNull
+    @NotBlank(message = "DNI cannot be empty")
     @Size(min = 9, max = 9, message = "DNI must have 9 characters")
     private String dni;
     private LocalDate hireDate;

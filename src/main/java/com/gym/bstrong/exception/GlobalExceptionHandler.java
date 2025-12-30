@@ -49,4 +49,11 @@ public class GlobalExceptionHandler {
         logger.error("Monitor not found exception", ex);
         return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(ActivityNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleActivityNotFound(ActivityNotFoundException ex) {
+        logger.error("Activity not found exception", ex);
+        return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
 }

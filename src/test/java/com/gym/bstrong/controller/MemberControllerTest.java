@@ -113,7 +113,7 @@ public class MemberControllerTest {
 
     @Test
     void modifyMember_ShouldReturn400_WhenInvalidData() throws Exception {
-        MemberInDto invalidInput = new MemberInDto(); // Nombre null
+        MemberInDto invalidInput = new MemberInDto();
 
         mockMvc.perform(put("/members/1")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -138,7 +138,7 @@ public class MemberControllerTest {
     void deleteMember_ShouldReturn204_WhenExists() throws Exception {
 
         mockMvc.perform(delete("/members/1"))
-                .andExpect(status().isNoContent()); // 204
+                .andExpect(status().isNoContent());
     }
 
     @Test
