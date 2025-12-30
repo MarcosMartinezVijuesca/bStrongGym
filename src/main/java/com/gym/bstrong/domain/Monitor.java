@@ -44,7 +44,7 @@ public class Monitor {
     @Column
     private String specialty;
 
-//    @OneToMany(mappedBy = "monitor")
-//    @JsonBackReference(value = "monitor-activities")
-//    private List<Activity> activities;
+    @OneToMany(mappedBy = "monitor")
+    @JsonBackReference
+    private List<Activity> activities;
 }

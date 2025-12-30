@@ -11,8 +11,6 @@ import java.util.List;
 public interface MemberRepository extends CrudRepository<Member, Long> {
     List<Member> findAll();
 
-    List<Member> findByActive(boolean active);
-
     @Query("SELECT m FROM Member m WHERE " +
             "(:firstName IS NULL OR m.firstName LIKE %:firstName%) AND " +
             "(:lastName IS NULL OR m.lastName LIKE %:lastName%) AND " +

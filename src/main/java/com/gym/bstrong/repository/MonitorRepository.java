@@ -13,7 +13,6 @@ public interface MonitorRepository extends CrudRepository<Monitor, Long> {
 
     List<Monitor> findAll();
 
-
     @Query("SELECT m FROM Monitor m WHERE " +
             "(:name IS NULL OR m.name LIKE %:name%) AND " +
             "(:specialty IS NULL OR m.specialty LIKE %:specialty%) AND " +
