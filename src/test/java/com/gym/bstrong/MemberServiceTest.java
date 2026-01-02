@@ -35,8 +35,8 @@ public class MemberServiceTest {
 
     @Test
     public void testFindAll() {
-        Member member1 = new Member(1L, "Juan", "Pérez", LocalDate.of(1990, 1, 1),LocalDate.now(), true, 80.5f, "juan@mail.com");
-        Member member2 = new Member(2L, "Ana", "Gómez", LocalDate.of(1995, 5, 15), LocalDate.now(), true, 60.0f, "ana@mail.com");
+        Member member1 = new Member(1L, "Juan", "Pérez", LocalDate.of(1990, 1, 1),LocalDate.now(), true, 80.5f, "juan@mail.com", null);
+        Member member2 = new Member(2L, "Ana", "Gómez", LocalDate.of(1995, 5, 15), LocalDate.now(), true, 60.0f, "ana@mail.com", null);
         List<Member> mockMembers = List.of(member1, member2);
 
         MemberOutDto dto1 = new MemberOutDto(1L, "Juan", "Pérez", true, null);
@@ -61,7 +61,7 @@ public class MemberServiceTest {
         Member mappedMember = new Member();
         mappedMember.setFirstName("Carlos");
 
-        Member savedMember = new Member(5L, "Carlos", "Ruiz", LocalDate.now(), LocalDate.now(), true, 80f, "carlos@email.com");
+        Member savedMember = new Member(5L, "Carlos", "Ruiz", LocalDate.now(), LocalDate.now(), true, 80f, "carlos@email.com", null);
         MemberOutDto outputDto = new MemberOutDto(5L, "Carlos", "Ruiz", true, null);
 
         when(modelMapper.map(inputDto, Member.class)).thenReturn(mappedMember);
