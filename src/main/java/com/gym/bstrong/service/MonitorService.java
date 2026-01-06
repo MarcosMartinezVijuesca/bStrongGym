@@ -43,7 +43,6 @@ public class MonitorService {
     public MonitorOutDto addMonitor(MonitorInDto monitorInDto) {
         Monitor monitor = modelMapper.map(monitorInDto, Monitor.class);
 
-        monitor.setHireDate(LocalDate.now());
 
         Monitor newMonitor = monitorRepository.save(monitor);
         return modelMapper.map(newMonitor, MonitorOutDto.class);

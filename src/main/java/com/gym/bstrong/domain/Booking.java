@@ -18,22 +18,22 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(name = "booking_date")
     @NotNull
     private LocalDate bookingDate;
 
     @Column
     private boolean attended;
 
-    @Column
+    @Column(name = "review_note")
     @Min(value = 1)
     @Max(value = 5)
     private Integer reviewNote;
 
-    @Column
+    @Column(name = "review_test")
     private String reviewText;
 
-    @Column
+    @Column(name = "price_paid")
     @Min(value = 0)
     private float pricePaid;
 

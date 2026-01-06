@@ -32,14 +32,14 @@ public class Activity {
     @Min(value = 1)
     private int capacity;
 
-    @Column
+    @Column(name = "duration_minutes")
     @Min(value = 15)
     private int durationMinutes;
 
     @Column
     private boolean active;
 
-    @Column
+    @Column(name = "price_per_session")
     private float pricePerSession;
 
     @ManyToOne
@@ -47,7 +47,7 @@ public class Activity {
     @JsonManagedReference
     private Monitor monitor;
 
-//    @OneToMany(mappedBy = "activity")
-//    @JsonBackReference(value = "activity-bookings")
-//    private List<Booking> bookings;
+    @OneToMany(mappedBy = "activity")
+    @JsonBackReference(value = "activity-bookings")
+    private List<Booking> bookings;
 }
