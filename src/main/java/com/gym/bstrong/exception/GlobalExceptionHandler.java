@@ -62,4 +62,10 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(SubscriptionNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleSubscriptionNotFound(SubscriptionNotFoundException ex) {
+        logger.error("Subscription not found exception", ex);
+        return new ResponseEntity<>(ErrorResponse.notFound(ex.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
 }

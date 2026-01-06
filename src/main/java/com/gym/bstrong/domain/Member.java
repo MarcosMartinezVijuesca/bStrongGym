@@ -23,15 +23,15 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(name = "first_name")
     @NotNull
     private String firstName;
 
-    @Column
+    @Column(name = "last_name")
     @NotNull
     private String lastName;
 
-    @Column
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
     @Column(name = "registration_date")
@@ -48,10 +48,10 @@ public class Member {
     @Email
     private String email;
 
-//    @OneToMany(mappedBy = "member")
-//    @JsonBackReference(value = "member-subscriptions")
-//    private List<Subscription> subscriptions;
-//
+    @OneToMany(mappedBy = "member")
+    @JsonBackReference(value = "member-subscriptions")
+    private List<Subscription> subscriptions;
+
     @OneToMany(mappedBy = "member")
     @JsonBackReference(value = "member-bookings")
     private List<Booking> bookings;

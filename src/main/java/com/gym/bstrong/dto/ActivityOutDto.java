@@ -14,6 +14,7 @@ public class ActivityOutDto {
     private String name;
     private String description;
     private int capacity;
+    private boolean active;
     private int durationMinutes;
     private String monitorName;
 }

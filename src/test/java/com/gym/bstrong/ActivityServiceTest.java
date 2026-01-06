@@ -41,12 +41,12 @@ public class ActivityServiceTest {
 
     @Test
     public void testFindAll() {
-        Activity activity1 = new Activity(1L, "Yoga", "Relaxing yoga", 30, 20, true, 5, new Monitor());
-        Activity activity2 = new Activity(2L, "Zumba", "High energy", 30, 30, true, 4, new Monitor());
+        Activity activity1 = new Activity(1L, "Yoga", "Relaxing yoga", 30, 20, true, 5, new Monitor(), null);
+        Activity activity2 = new Activity(2L, "Zumba", "High energy", 30, 30, true, 4, new Monitor(), null);
         List<Activity> mockActivities = List.of(activity1, activity2);
 
-        ActivityOutDto dto1 = new ActivityOutDto(1L, "Yoga", "Relaxing yoga", 30, 20, "Monitor1");
-        ActivityOutDto dto2 = new ActivityOutDto(2L, "Zumba", "High energy", 30, 30, "Monitor2");
+        ActivityOutDto dto1 = new ActivityOutDto(1L, "Yoga", "Relaxing yoga", 30, true, 20, "Monitor1");
+        ActivityOutDto dto2 = new ActivityOutDto(2L, "Zumba", "High energy", 30, true, 30, "Monitor2");
         List<ActivityOutDto> mockDtos = List.of(dto1, dto2);
 
         when(activityRepository.findAll()).thenReturn(mockActivities);
@@ -70,8 +70,8 @@ public class ActivityServiceTest {
         Activity mappedActivity = new Activity();
         mappedActivity.setName("Yoga");
 
-        Activity savedActivity = new Activity(1L, "Yoga", "Relaxing yoga", 20, 60, true, 20, monitor);
-        ActivityOutDto outputDto = new ActivityOutDto(1L, "Yoga", "Relaxing yoga", 20, 60, "Pepe");
+        Activity savedActivity = new Activity(1L, "Yoga", "Relaxing yoga", 20, 60, true, 20, monitor, null);
+        ActivityOutDto outputDto = new ActivityOutDto(1L, "Yoga", "Relaxing yoga", 20, true, 60, "Pepe");
 
         when(monitorRepository.findById(1L)).thenReturn(Optional.of(monitor));
         when(modelMapper.map(inputDto, Activity.class)).thenReturn(mappedActivity);
