@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Clase de Espada",
+    "description": "Aprende a defenderte sin perder el aliento.",
+    "capacity": 10,
+    "durationMinutes": 60,
+    "active": true,
+    "pricePerSession": 15.00,
+    "monitorId": 1
+  },
+  {
+    "name": "Martillo Pesado",
+    "description": "Entrenamiento funcional forjando espadas.",
+    "capacity": 20,
+    "durationMinutes": 45,
+    "active": true,
+    "pricePerSession": 10.50,
+    "monitorId": 2
+  },
+  {
+    "name": "Siesta en Cubierta",
+    "description": "Mindfulness y recuperación de resaca de ron.",
+    "capacity": 50,
+    "durationMinutes": 30,
+    "active": true,
+    "pricePerSession": 5.00,
+    "monitorId": 3
+  }
+]
