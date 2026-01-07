@@ -1,0 +1,1784 @@
+{
+	"info": {
+		"_postman_id": "c5781eeb-51ba-443f-a630-096375a1caa1",
+		"name": "bStrong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50792272",
+		"_collection_link": "https://marcosmv10-2307845.postman.co/workspace/Marcosmv10's-Workspace~b7beaa76-70a4-4c99-8179-1f52d65c0b12/collection/50792272-c5781eeb-51ba-443f-a630-096375a1caa1?action=share&source=collection_link&creator=50792272"
+	},
+	"item": [
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "/members",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/members/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members?active=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/members?active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members?firstName=Jack",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/members?firstName=Jack",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Jack"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members?firstName=Jack&lastName=Sparrow&active=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/members?firstName=Hector&lastName=Barbossa&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Hector"
+								},
+								{
+									"key": "lastName",
+									"value": "Barbossa"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members?firstName=Davy&active=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/members?firstName=Davy&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Davy"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members:id (NOT FOUND)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"birthDate\": \"{{birthDate}}\",\n  \"weight\": {{weight}},\n  \"email\": \"{{email}}\",\n  \"active\": {{active}}\n}\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members (INVALID DATA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/member:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martínez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/member:id (INVALID DATA)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/member:id (NOT FOUND)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martínez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": \"93\",\n  \"email\": \"marcos@svalero.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/members:id (NOT FOUND)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Arnold\",\n  \"lastName\": \"Schwarzenegger\",\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": 113.5,\n  \"email\": \"arnold@gym.com\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/members/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Monitors",
+			"item": [
+				{
+					"name": "/monitors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors?specialty=Esgrima Cardio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors?specialty=Esgrima Cardio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							],
+							"query": [
+								{
+									"key": "specialty",
+									"value": "Esgrima Cardio"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors?available=false",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors?available=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							],
+							"query": [
+								{
+									"key": "available",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors?name=Will&available=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors?name=Will&available=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Will"
+								},
+								{
+									"key": "available",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id (NOT FOUND)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"dni\": \"{{dni}}\",\r\n    \"hireDate\": \"{{hireDate}}\",\r\n    \"salary\": {{salary}},\r\n    \"available\": {{available}},\r\n    \"specialty\": \"{{specialty}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors (INVALID DATA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"dni\": \"1\",\r\n    \"hireDate\": \"2025-05-25\",\r\n    \"salary\": -5,\r\n    \"available\": true,\r\n    \"specialty\": \"Programar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Marcos\", \r\n  \"dni\": \"98765432A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": 2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id (INVALID DATA)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\", \r\n  \"dni\": \"987654321A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": -2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id (NOT FOUND)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Marcos\", \r\n  \"dni\": \"98765432A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": 2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitors/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/monitors:id (NOT FOUND)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitors/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitors",
+								"99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "/activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities?name=Siesta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities?name=Siesta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Siesta"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities?name=Espada&active=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities?name=Espada&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Espada"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities?name=Martillo&active=true&minCapacity=20",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities?name=Martillo&active=true&minCapacity=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Martillo"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								},
+								{
+									"key": "minCapacity",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id (NOT FOUND)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"capacity\": {{capacity}},\r\n    \"durationMinutes\": {{durationMinutes}},\r\n    \"active\": {{active}},\r\n    \"pricePerSession\": {{pricePerSession}},\r\n    \"monitorId\": {{monitorId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities (INVALID DATA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"a navegar!\",\r\n    \"capacity\": 0,\r\n    \"durationMinutes\": 0,\r\n    \"active\": false,\r\n    \"pricePerSession\": -1,\r\n    \"monitorId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yoga Avanzado\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 25,\r\n    \"durationMinutes\": 90,\r\n    \"active\": true,\r\n    \"pricePerSession\": 8.50,\r\n    \"monitorId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/activities/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id (INVALID DATA)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 0,\r\n    \"durationMinutes\": 1,\r\n    \"active\": true,\r\n    \"pricePerSession\": -8,\r\n    \"monitorId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/activities/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id (NOT FOUND)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yoga Avanzado\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 25,\r\n    \"durationMinutes\": 90,\r\n    \"active\": true,\r\n    \"pricePerSession\": 8.50,\r\n    \"monitorId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/activities/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/activities:id (NOT FOUND)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/activities/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"activities",
+								"99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "/bookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings?memberId=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings?memberId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings?memberId=1&attended=false",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings?memberId=1&attended=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "1"
+								},
+								{
+									"key": "attended",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings?memberId=1&attended=false&activityId=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings?memberId=3&attended=false&activityId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "3"
+								},
+								{
+									"key": "attended",
+									"value": "false"
+								},
+								{
+									"key": "activityId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id (NOT FOUND)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingDate\": \"{{bookingDate}}\",\r\n    \"attended\": {{attended}},\r\n    \"reviewNote\": {{reviewNote}},\r\n    \"reviewText\": \"{{reviewText}}\",\r\n    \"pricePaid\": {{pricePaid}},\r\n    \"memberId\": {{memberId}},\r\n    \"activityId\": {{activityId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings (INVALID DATA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attended\": true,\r\n    \"reviewNote\": 0,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": -9.50,\r\n    \"memberId\": \"\",\r\n    \"activityId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingDate\": \"2025-12-31\",\r\n    \"attended\": true,\r\n    \"reviewNote\": 5,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": 9.50,\r\n    \"memberId\": 1,\r\n    \"activityId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id (INVALID DATA)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingDate\": null,\r\n    \"attended\": true,\r\n    \"reviewNote\": 0,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": -9.50,\r\n    \"memberId\": \"\",\r\n    \"activityId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id (NOT FOUND)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingDate\": \"2025-12-31\",\r\n    \"attended\": true,\r\n    \"reviewNote\": 5,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": 9.50,\r\n    \"memberId\": 1,\r\n    \"activityId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bookings/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings:id (NOT FOUND)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookings/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "/subscriptions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions?memberId=2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions?memberId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions?memberId=2&active=true",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions?memberId=3&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "3"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions?memberId=2&active=true&type=QUARTERLY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions?memberId=2&active=true&type=QUARTERLY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "2"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								},
+								{
+									"key": "type",
+									"value": "QUARTERLY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id (NOT FOUND)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"{{type}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"endDate\": \"{{endDate}}\",\r\n    \"price\": {{price}},\r\n    \"active\": {{active}},\r\n    \"autoRenewal\": {{autoRenewal}},\r\n    \"memberId\": {{memberId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions (INVALID DATA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"trimestral\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"price\": -8,\r\n    \"active\": false,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 35.50,\r\n    \"active\": true,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id (INVALID DATA)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"trimestral\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"price\": -8,\r\n    \"active\": false,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id (NOT FOUND)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 35.50,\r\n    \"active\": true,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/subscriptions:id (NOT FOUND)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscriptions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
