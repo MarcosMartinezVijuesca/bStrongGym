@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Elizabeth Swann",
+    "dni": "88888888E",
+    "hireDate": "2024-01-15",
+    "salary": 1800.50,
+    "available": true,
+    "specialty": "Esgrima Cardio"
+  },
+  {
+    "name": "Will Turner",
+    "dni": "77777777W",
+    "hireDate": "2023-11-01",
+    "salary": 1600.00,
+    "available": true,
+    "specialty": "Herrería CrossFit"
+  },
+  {
+    "name": "Sr. Gibbs",
+    "dni": "55555555G",
+    "hireDate": "2020-03-20",
+    "salary": 1200.75,
+    "available": true,
+    "specialty": "Levantamiento de Barril"
+  }
+]

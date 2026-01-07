@@ -1,0 +1,29 @@
+[
+  {
+    "bookingDate": "2025-01-10",
+    "attended": true,
+    "reviewNote": 5,
+    "reviewText": "¡Casi pierdo una pierna, excelente clase!",
+    "pricePaid": 0.0,
+    "memberId": 1,
+    "activityId": 1
+  },
+  {
+    "bookingDate": "2025-01-12",
+    "attended": true,
+    "reviewNote": 2,
+    "reviewText": "Demasiado seco, faltaba humedad ambiente",
+    "pricePaid": 0.0,
+    "memberId": 2,
+    "activityId": 2
+  },
+  {
+    "bookingDate": "2025-01-15",
+    "attended": false,
+    "reviewNote": 1,
+    "reviewText": "¡De nada me sirve el Mindfulness!",
+    "pricePaid": 5.0,
+    "memberId": 3,
+    "activityId": 3
+  }
+]

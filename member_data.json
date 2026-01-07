@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "Jack",
+    "lastName": "Sparrow",
+    "birthDate": "1698-09-25",
+    "weight": 80.5,
+    "email": "jack@perlanegra.com",
+    "active": true
+  },
+  {
+    "firstName": "Davy",
+    "lastName": "Jones",
+    "birthDate": "1682-05-13",
+    "weight": 90.5,
+    "email": "davy@holandeserrante.com",
+    "active": true
+  },
+  {
+    "firstName": "Hector",
+    "lastName": "Barbossa",
+    "birthDate": "1685-12-01",
+    "weight": 85.3,
+    "email": "hector@perlanegra.com",
+    "active": true
+  }
+]
