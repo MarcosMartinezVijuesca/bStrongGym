@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Spinning",
+  "description": "Sesion intensa",
+  "capacity": 20,
+  "active": true,
+  "durationMinutes": 45,
+  "monitorName": "María"
+}

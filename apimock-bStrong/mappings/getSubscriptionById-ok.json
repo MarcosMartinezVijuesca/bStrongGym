@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/subscriptions/1"
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "getSubscriptionById-ok.json"
+  }
+}

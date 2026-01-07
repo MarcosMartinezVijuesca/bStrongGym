@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "firstName": "Pedro",
+    "lastName": "Picapiedra",
+    "email": "picapiedrapedro@gym.com",
+    "birthDate": "0047-07-30",
+    "weight": 105.5,
+    "active": true,
+    "registrationDate": "2026-01-02"
+  }
+]

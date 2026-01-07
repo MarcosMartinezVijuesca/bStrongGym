@@ -1,0 +1,9 @@
+{
+  "bookingDate": "2025-12-31",
+  "attended": true,
+  "reviewNote": 5,
+  "reviewText": "Ha estado bien",
+  "pricePaid": 5,
+  "memberId": 1,
+  "activityId": 1
+}

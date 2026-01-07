@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Alberto",
+    "dni": "12345678A",
+    "specialty": "Muai Thai",
+    "available": true,
+    "hireDate": "2024-03-01"
+  },
+  {
+    "id": 2,
+    "name": "Pedro",
+    "dni": "12435678A",
+    "specialty": "Abdominales",
+    "available": true,
+    "hireDate": "2025-02-01"
+  },
+  {
+    "id": 3,
+    "name": "María",
+    "dni": "10985678A",
+    "specialty": "Spinning",
+    "available": true,
+    "hireDate": "2023-08-01"
+  }
+]

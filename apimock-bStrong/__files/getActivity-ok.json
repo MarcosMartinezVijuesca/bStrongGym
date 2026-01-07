@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Spinning",
+    "description": "Sesion intensa",
+    "capacity": 20,
+    "active": true,
+    "durationMinutes": 45,
+    "monitorName": "María"
+  },
+  {
+    "id": 2,
+    "name": "Abdominales",
+    "description": "Ha sido eficiente",
+    "capacity": 15,
+    "active": true,
+    "durationMinutes": 30,
+    "monitorName": "Pedro"
+  },
+  {
+    "id": 3,
+    "name": "Muai Thai",
+    "description": "Sesion intensa",
+    "capacity": 10,
+    "active": true,
+    "durationMinutes": 60,
+    "monitorName": "Alberto"
+  }
+]

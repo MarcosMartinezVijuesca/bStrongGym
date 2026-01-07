@@ -1,0 +1,25 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPath": "/activities",
+    "queryParameters": {
+      "name": {
+        "equalTo": "Spinning"
+      },
+      "active": {
+        "equalTo": "true"
+      },
+      "minCapacity": {
+        "equalTo": "20"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "getActivity-filter-ok.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Zumba",
+  "description": "A menearse!",
+  "capacity": 20,
+  "durationMinutes": 60,
+  "active": true,
+  "pricePerSession": 5,
+  "monitorId": 1
+}

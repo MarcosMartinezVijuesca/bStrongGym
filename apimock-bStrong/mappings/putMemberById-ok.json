@@ -1,0 +1,19 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "PUT",
+    "url": "/members/1",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.firstName"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "putMemberById-ok.json"
+  }
+}

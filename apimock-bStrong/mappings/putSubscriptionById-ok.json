@@ -1,0 +1,19 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "PUT",
+    "url": "/subscriptions/1",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.memberId"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "putSubscriptionById-ok.json"
+  }
+}

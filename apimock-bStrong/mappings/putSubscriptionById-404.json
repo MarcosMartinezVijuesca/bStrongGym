@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/subscriptions/99"
+  },
+  "response": {
+    "status": 404,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "subscriptionNotFound.json"
+  }
+}

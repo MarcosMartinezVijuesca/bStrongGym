@@ -1,0 +1,10 @@
+{
+  "id": "1",
+  "bookingDate": "2024-8-21",
+  "attended": true,
+  "reviewNote": 5,
+  "reviewText": "Ha estado bien",
+  "pricePaid": 10,
+  "memberId": 1,
+  "activityId": 1
+}

@@ -1,0 +1,19 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "PUT",
+    "url": "/activities/1",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.name"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "putActivityById-ok.json"
+  }
+}

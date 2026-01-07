@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/members/1"
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "getMemberById-ok.json"
+  }
+}

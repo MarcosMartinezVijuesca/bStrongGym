@@ -1,0 +1,9 @@
+{
+  "name": "Peso libre",
+  "description": "Entreno de fuerza",
+  "capacity": 20,
+  "durationMinutes": 60,
+  "active": true,
+  "pricePerSession": 5,
+  "monitorId": 1
+}

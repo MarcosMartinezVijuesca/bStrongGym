@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "Alberto",
+  "dni": "12345678A",
+  "specialty": "Muai Thai",
+  "available": true,
+  "hireDate": "2024-03-01"
+}

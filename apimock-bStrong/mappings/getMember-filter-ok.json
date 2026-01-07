@@ -1,0 +1,25 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPath": "/members",
+    "queryParameters": {
+      "firstName": {
+        "equalTo": "Pedro"
+      },
+      "lastName": {
+        "equalTo": "Picapiedra"
+      },
+      "active": {
+        "equalTo": "true"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "getMember-filter-ok.json"
+  }
+}

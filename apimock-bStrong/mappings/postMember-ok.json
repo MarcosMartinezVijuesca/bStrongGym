@@ -1,0 +1,19 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "url": "/members",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.firstName"
+      }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "postMember-ok.json"
+  }
+}

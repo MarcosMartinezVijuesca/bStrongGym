@@ -1,0 +1,25 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPath": "/subscriptions",
+    "queryParameters": {
+      "type": {
+        "equalTo": "MONTHLY"
+      },
+      "memberId": {
+        "equalTo": "1"
+      },
+      "active": {
+        "equalTo": "true"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "getSubscription-filter-ok.json"
+  }
+}

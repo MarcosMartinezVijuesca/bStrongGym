@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "type": "MONTHLY",
+    "startDate": "2026-01-01",
+    "endDate": "2026-02-01",
+    "price": 29.99,
+    "active": true,
+    "autoRenewal": true,
+    "memberName": "Pedro"
+  },
+  {
+    "id": 2,
+    "type": "QUARTERLY",
+    "startDate": "2026-01-01",
+    "endDate": "2026-04-01",
+    "price": 79.99,
+    "active": true,
+    "autoRenewal": true,
+    "memberName": "Bob"
+  },
+  {
+    "id": 3,
+    "type": "ANNUAL",
+    "startDate": "2026-01-01",
+    "endDate": "2027-02-01",
+    "price": 300.99,
+    "active": true,
+    "autoRenewal": false,
+    "memberName": "Patricio"
+  }
+]

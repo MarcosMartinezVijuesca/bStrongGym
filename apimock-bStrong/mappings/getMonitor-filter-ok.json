@@ -1,0 +1,25 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPath": "/monitors",
+    "queryParameters": {
+      "name": {
+        "equalTo": "Alberto"
+      },
+      "specialty": {
+        "equalTo": "Muai Thai"
+      },
+      "available": {
+        "equalTo": "true"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "getMonitor-filter-ok.json"
+  }
+}
