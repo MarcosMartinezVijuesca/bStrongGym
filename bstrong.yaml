@@ -1,0 +1,1326 @@
+openapi: 3.0.1
+info:
+  title: bStrong API
+  description: API for managing gym members
+  version: 1.0.0
+servers:
+  - url: 'https://www.bstrong.com'
+paths:
+  /members:
+    get:
+      summary: Returns a list of members
+      description: |
+        Returns a list of all available members.
+        
+        Allows to filter by 3 different fields, allows to filter using one or more filters:
+        - **active**: filters by status active/inactive
+        - **firstName**: filters by name
+        - **lastName**: filters by last name
+
+      parameters:
+        - name: active
+          in: query
+          description: Filters members by status
+          required: false
+          schema:
+            type: boolean
+        - name: firstName
+          in: query
+          description: Filters members by first name
+          required: false
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          description: Filters members by last name
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MemberOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register member
+      description: Register a new member
+      requestBody:
+        description: Member new data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberInDto'
+      responses:
+        '201':
+          description: Member registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /members/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Member identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get member by ID
+      description: Returns a specific member by ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberOutDto'
+        '404':
+          description: Member Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify member
+      description: Update an existing member's information
+      requestBody:
+        description: Updated member data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberInDto'
+      responses:
+        '200':
+          description: Member modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Member Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete member
+      description: Remove a member from the database
+      responses:
+        '204':
+          description: Member deleted successfully (No Content)
+        '404':
+          description: Member Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /monitors:
+    get:
+      summary: Returns a list of monitors
+      description: |
+        Returns a list of all available monitors.
+
+        Allows to filter by different fields, can filter by 1 or more fields:
+        - **name**: filters by name
+        - **specialty**: filters by specialty
+        - **available**: shows if the activity is available/unavailable
+
+      parameters:
+        - name: name
+          in: query
+          description: Filter monitors by name
+          required: false
+          schema:
+            type: string
+        - name: specialty
+          in: query
+          description: Filter monitors by specialty
+          required: false
+          schema:
+            type: string
+        - name: available
+          in: query
+          description: Filter monitors by availability
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MonitorOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register monitor
+      description: Register a new monitor
+      requestBody:
+        description: Monitor new data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorInDto'
+      responses:
+        '201':
+          description: Monitor registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Monitor'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /monitors/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Monitor identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get monitor by ID
+      description: Returns a specific monitor by their unique identifier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorOutDto'
+        '404':
+          description: Monitor Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify monitor
+      description: Update an existing monitor's information
+      requestBody:
+        description: Updated monitor data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorInDto'
+      responses:
+        '200':
+          description: Monitor modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Monitor Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete monitor
+      description: Remove a monitor from the database
+      responses:
+        '204':
+          description: Monitor deleted successfully (No Content)
+        '404':
+          description: Monitor Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /activities:
+    get:
+      summary: Returns a list of activities
+      description: |
+        Returns a list of all available activities.
+
+        Allows to filter by different fields, can filter by 1 or more fields:
+        - **name**: filters by name
+        - **active**: filters by status active/inactive
+        - **minCapacity**: filters by minimum capacity
+
+      parameters:
+        - name: name
+          in: query
+          description: Filter activities by name
+          required: false
+          schema:
+            type: string
+        - name: active
+          in: query
+          description: Filter activities by status
+          required: false
+          schema:
+            type: boolean
+        - name: minCapacity
+          in: query
+          description: Filter activities by minimum capacity
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivityOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register activity
+      description: Register a new activity
+      requestBody:
+        description: Activity new data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityInDto'
+      responses:
+        '201':
+          description: Activity registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /activities/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Activity identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get activity by ID
+      description: Returns a specific activity by their unique identifier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityOutDto'
+        '404':
+          description: Activity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify activity
+      description: Update an existing activity's information
+      requestBody:
+        description: Updated activity data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityInDto'
+      responses:
+        '200':
+          description: Activity modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Activity or Monitor Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete activity
+      description: Remove an activity from the database
+      responses:
+        '204':
+          description: Activity deleted successfully (No Content)
+        '404':
+          description: Activity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /bookings:
+    get:
+      summary: Returns a list of bookings
+      description: |
+        Returns a list of bookings.
+
+        Allows to filter by different fields, can filter by 1 or more fields:
+        - **memberId**: filters by member ID
+        - **attended**: filters status attended/unattended
+        - **activityId**: filters by activity ID
+
+      parameters:
+        - name: memberId
+          in: query
+          description: Filter bookings by member ID
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: attended
+          in: query
+          description: Filter bookings by attendance
+          required: false
+          schema:
+            type: boolean
+        - name: activityId
+          in: query
+          description: Filter bookings by activity ID
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookingOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register booking
+      description: Create a new booking
+      requestBody:
+        description: Booking new data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingInDto'
+      responses:
+        '201':
+          description: Booking registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /bookings/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Booking identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get booking by ID
+      description: Returns a specific booking by their unique identifier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingOutDto'
+        '404':
+          description: Booking Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify booking
+      description: Update an existing booking's information
+      requestBody:
+        description: Updated booking data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingInDto'
+      responses:
+        '200':
+          description: Booking modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Booking Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete booking
+      description: Remove a booking from the database
+      responses:
+        '204':
+          description: Booking deleted successfully (No Content)
+        '404':
+          description: Booking Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /subscriptions:
+    get:
+      summary: Returns a list of subscriptions
+      description: |
+        Returns a list of all subscriptions.
+
+        Allows to filter by different fields, can filter by 1 or more fields:
+        - **type**: filters by quota (MONTHLY, QUARTERLY, ANNUAL)
+        - **memberId**: filters by member ID
+        - **active**: filters member subscription status active/inactive
+
+      parameters:
+        - name: type
+          in: query
+          description: Filter subscriptions by type
+          required: false
+          schema:
+            type: string
+            enum: [MONTHLY, QUARTERLY, ANNUAL]
+        - name: memberId
+          in: query
+          description: Filter subscriptions by member ID
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: active
+          in: query
+          description: Filter subscriptions by status
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubscriptionOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register subscription
+      description: Create a new subscription
+      requestBody:
+        description: Subscription new data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionInDto'
+      responses:
+        '201':
+          description: Subscription registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /subscriptions/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Subscription identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get subscription by ID
+      description: Returns a specific subscription by their unique identifier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionOutDto'
+        '404':
+          description: Subscription Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify subscription
+      description: Update an existing subscription's information
+      requestBody:
+        description: Updated subscription data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionInDto'
+      responses:
+        '200':
+          description: Subscription modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Subscription Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete subscription
+      description: Remove a subscription from the database
+      responses:
+        '204':
+          description: Subscription deleted successfully (No Content)
+        '404':
+          description: Subscription Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+components:
+  schemas:
+    Member:
+      allOf:
+        - $ref: '#/components/schemas/MemberInDto'
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Member identifier
+        registrationDate:
+          type: string
+          format: date
+          description: Date when the member was registered
+      example:
+        id: 1
+        firstName: Pedro
+        lastName: Picapiedra
+        email: picapiedrapedro@gym.com
+        birthDate: 0047-07-30
+        weight: 105.5
+        active: true
+        registrationDate: 2026-01-02
+
+    MemberInDto:
+      type: object
+      required:
+        - firstName
+        - lastName
+      properties:
+        firstName:
+          type: string
+          description: Member first name
+        lastName:
+          type: string
+          description: Member last name
+        email:
+          type: string
+          format: email
+          description: Member email address
+        birthDate:
+          type: string
+          format: date
+          description: Member birth date
+        weight:
+          type: number
+          format: float
+          description: Member weight
+        active:
+          type: boolean
+          description: Status of the member
+      example:
+        firstName: Pedro
+        lastName: Picapiedra
+        email: picapiedrapedro@gym.com
+        birthDate: 0047-07-30
+        weight: 105.5
+        active: true
+
+    MemberOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Member identifier
+        firstName:
+          type: string
+          description: Member first name
+        lastName:
+          type: string
+          description: Member last name
+        active:
+          type: boolean
+          description: Status of the member
+        registrationDate:
+          type: string
+          format: date
+          description: Date of registration
+      example:
+        id: 1
+        firstName: Pedro
+        lastName: Picapiedra
+        active: true
+        registrationDate: 2026-01-02
+
+    Monitor:
+      allOf:
+        - $ref: '#/components/schemas/MonitorInDto'
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Monitor identifier
+      example:
+        id: 1
+        name: Shaggy Rogers
+        dni: 12345678A
+        hireDate: 2024-03-01
+        salary: 1500.50
+        available: true
+        specialty: Ghost hunt spinning
+
+    MonitorInDto:
+      type: object
+      required:
+        - name
+        - dni
+      properties:
+        name:
+          type: string
+          description: Monitor name
+        dni:
+          type: string
+          description: DNI (9 characters)
+          minLength: 9
+          maxLength: 9
+        hireDate:
+          type: string
+          format: date
+          description: Date of hiring
+        salary:
+          type: number
+          format: float
+          description: Monitor salary
+          minimum: 0
+        available:
+          type: boolean
+          description: Availability status
+        specialty:
+          type: string
+          description: Monitor specialty
+      example:
+        name: Shaggy Rogers
+        dni: 12345678A
+        hireDate: 2024-03-01
+        salary: 1500.50
+        available: true
+        specialty: Ghost hunting spinning
+
+    MonitorOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Monitor identifier
+        name:
+          type: string
+          description: Monitor name
+        dni:
+          type: string
+          description: Monitor DNI
+        specialty:
+          type: string
+          description: Monitor specialty
+        available:
+          type: boolean
+          description: Availability status
+        hireDate:
+          type: string
+          format: date
+          description: Date of hiring
+      example:
+        id: 1
+        name: Shaggy
+        dni: 12345678A
+        specialty: Ghost hunting spinning
+        available: true
+        hireDate: 2024-03-01
+
+    Activity:
+      allOf:
+        - $ref: '#/components/schemas/ActivityInDto'
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Activity identifier
+      example:
+        id: 1
+        name: Ghost hunting spining
+        description: Sesion intensa
+        capacity: 20
+        durationMinutes: 60
+        active: true
+        pricePerSession: 5.0
+        monitorId: 1
+
+    ActivityInDto:
+      type: object
+      required:
+        - name
+        - capacity
+        - durationMinutes
+        - monitorId
+      properties:
+        name:
+          type: string
+          description: Activity name
+        description:
+          type: string
+          description: Activity description
+        capacity:
+          type: integer
+          description: Activity capacity
+          minimum: 1
+        durationMinutes:
+          type: integer
+          description: Duration in minutes
+          minimum: 15
+        active:
+          type: boolean
+          description: Status of the activity
+        pricePerSession:
+          type: number
+          format: float
+          description: Price per session
+          minimum: 0
+        monitorId:
+          type: number
+          format: int64
+          description: Monitor ID
+          minimum: 1
+      example:
+        name: Ghost hunting spinning
+        description: Sesion intensa
+        capacity: 20
+        durationMinutes: 60
+        active: true
+        pricePerSession: 5.0
+        monitorId: 1
+
+    ActivityOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Activity identifier
+        name:
+          type: string
+          description: Activity name
+        description:
+          type: string
+          description: Activity description
+        capacity:
+          type: integer
+          description: Activity capacity
+        active:
+          type: boolean
+          description: Status of the activity
+        durationMinutes:
+          type: integer
+          description: Duration in minutes
+        monitorName:
+          type: string
+          description: Name of the monitor assigned
+      example:
+        id: 1
+        name: Ghost hunting spinning
+        description: Sesion intensa
+        capacity: 20
+        active: true
+        durationMinutes: 60
+        monitorName: Shaggy Rogers
+
+    Booking:
+      allOf:
+        - $ref: '#/components/schemas/BookingInDto'
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Booking identifier
+      example:
+        id: 1
+        bookingDate: 2025-12-31
+        attended: true
+        reviewNote: 5
+        reviewText: Ha estado bien
+        pricePaid: 5.0
+        memberId: 1
+        activityId: 1
+
+    BookingInDto:
+      type: object
+      required:
+        - bookingDate
+        - memberId
+        - activityId
+      properties:
+        bookingDate:
+          type: string
+          format: date
+          description: Date of the booking
+        attended:
+          type: boolean
+          description: If the member attended the class
+        reviewNote:
+          type: integer
+          description: Rating from 1 to 5
+          minimum: 1
+          maximum: 5
+        reviewText:
+          type: string
+          description: Optional review text
+        pricePaid:
+          type: number
+          format: float
+          description: Price paid for the booking
+          minimum: 0
+        memberId:
+          type: integer
+          format: int64
+          description: ID of the member
+          minimum: 1
+        activityId:
+          type: integer
+          format: int64
+          description: ID of the activity
+          minimum: 1
+      example:
+        bookingDate: 2025-12-31
+        attended: true
+        reviewNote: 5
+        reviewText: Ha estado bien
+        pricePaid: 5.0
+        memberId: 1
+        activityId: 1
+
+    BookingOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Booking identifier
+        bookingDate:
+          type: string
+          format: date
+          description: Date of the booking
+        attended:
+          type: boolean
+          description: Attendance status
+        reviewNote:
+          type: integer
+          description: Rating given
+        reviewText:
+          type: string
+          description: Review text
+        pricePaid:
+          type: number
+          format: float
+          description: Price paid
+        memberName:
+          type: string
+          description: Name of the member
+        activityName:
+          type: string
+          description: Name of the activity
+      example:
+        id: 1
+        bookingDate: 2025-12-31
+        attended: true
+        reviewNote: 5
+        reviewText: Ha estado bien
+        pricePaid: 5.0
+        memberName: Pedro
+        activityName: Ghost hunting spinning
+
+    Subscription:
+      allOf:
+        - $ref: '#/components/schemas/SubscriptionInDto'
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Subscription identifier
+      example:
+        id: 1
+        type: MONTHLY
+        startDate: 2026-01-01
+        endDate: 2026-02-01
+        price: 29.99
+        active: true
+        autoRenewal: true
+        memberId: 1
+
+    SubscriptionInDto:
+      type: object
+      required:
+        - type
+        - startDate
+        - endDate
+        - memberId
+      properties:
+        type:
+          type: string
+          description: Subscription type
+          enum: [MONTHLY, QUARTERLY, ANNUAL]
+        startDate:
+          type: string
+          format: date
+          description: Start date
+        endDate:
+          type: string
+          format: date
+          description: End date
+        price:
+          type: number
+          format: float
+          description: Price of the subscription
+          minimum: 0
+        active:
+          type: boolean
+          description: Status of the subscription
+        autoRenewal:
+          type: boolean
+          description: Automatic renewal status
+        memberId:
+          type: integer
+          format: int64
+          description: Member ID
+          minimum: 1
+      example:
+        type: MONTHLY
+        startDate: 2026-01-01
+        endDate: 2026-02-01
+        price: 29.99
+        active: true
+        autoRenewal: true
+        memberId: 1
+
+    SubscriptionOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Subscription identifier
+        type:
+          type: string
+          description: Subscription type
+        startDate:
+          type: string
+          format: date
+          description: Start date
+        endDate:
+          type: string
+          format: date
+          description: End date
+        price:
+          type: number
+          format: float
+          description: Price
+        active:
+          type: boolean
+          description: Status
+        autoRenewal:
+          type: boolean
+          description: Auto renewal status
+        memberName:
+          type: string
+          description: Name of the member
+      example:
+        id: 1
+        type: MONTHLY
+        startDate: 2026-01-01
+        endDate: 2026-02-01
+        price: 29.99
+        active: true
+        autoRenewal: true
+        memberName: Pedro
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: number
+          format: int
+          description: Status code
+        message:
+          type: string
+          description: Error message
+        title:
+          type: string
+          description: Type of error
+
+    InternalServerError:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 500
+        message: Internal Server Error
+        title: internal-server-error
+
+    BadRequest:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 400
+        message: Validation Error
+        title: bad-request
+
+    NotFound:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 404
+        message: Not Found Error
+        title: not-found
