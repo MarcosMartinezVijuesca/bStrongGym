@@ -1,0 +1,14 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "DELETE",
+    "url": "/members/99"
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "memberNotFound.json"
+  }
+}

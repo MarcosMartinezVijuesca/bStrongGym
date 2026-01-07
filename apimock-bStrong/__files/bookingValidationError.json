@@ -1,0 +1,5 @@
+{
+  "code": 400,
+  "message": "Validation failed: memberId cannot be empty",
+  "title": "bad-request"
+}

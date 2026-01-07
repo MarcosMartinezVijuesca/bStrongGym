@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "type": "MONTHLY",
+    "startDate": "2026-01-01",
+    "endDate": "2026-02-01",
+    "price": 29.99,
+    "active": true,
+    "autoRenewal": true,
+    "memberName": "Pedro"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/members/99"
+  },
+  "response": {
+    "status": 404,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "memberNotFound.json"
+  }
+}

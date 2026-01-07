@@ -1,0 +1,9 @@
+{
+  "type": "QUARTERLY",
+  "startDate": "2026-01-01",
+  "endDate": "2026-04-01",
+  "price": 79.99,
+  "active": true,
+  "autoRenewal": true,
+  "memberId": 1
+}

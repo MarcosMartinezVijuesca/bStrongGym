@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "bookingDate": "2024-8-21",
+    "attended": true,
+    "reviewNote": 5,
+    "reviewText": "Ha estado bien",
+    "pricePaid": 10,
+    "memberId": 1,
+    "activityId": 1
+  },
+  {
+    "id": "2",
+    "bookingDate": "2018-4-11",
+    "attended": true,
+    "reviewNote": 4,
+    "reviewText": "Ha estado bien",
+    "pricePaid": 15,
+    "memberId": 2,
+    "activityId": 2
+  },
+  {
+    "id": "3",
+    "bookingDate": "2021-2-14",
+    "attended": true,
+    "reviewNote": 3,
+    "reviewText": "Me ha costado mucho",
+    "pricePaid": 5,
+    "memberId": 3,
+    "activityId": 3
+  }
+
+]
