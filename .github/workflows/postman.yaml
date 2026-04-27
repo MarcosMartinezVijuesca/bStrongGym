@@ -43,20 +43,24 @@ jobs:
 
       - name: Start API
         run: |
-          java -jar target/bstrong-0.0.1-SNAPSHOT.jar \
-          --spring.datasource.url=jdbc:mariadb://localhost:3306/bstrong \
-          --spring.datasource.username=gymAdmin \
-          --spring.datasource.password=gymPasswd \
-          --spring.jpa.database-platform=org.hibernate.dialect.MariaDBDialect \
-          --spring.config.import= \
-          --spring.profiles.active= &
-                echo "Waiting for API to be ready..."
-                for i in {1..20}; do
-                  curl -s http://localhost:8080/members && break
-                  echo "Attempt $i: API not ready yet..."
-                  sleep 3
-                done
-                echo "API is ready"
+            java -jar target/bstrong-0.0.1-SNAPSHOT.jar \
+            --spring.datasource.url=jdbc:mariadb://localhost:3306/bstrong \
+            --spring.datasource.username=gymAdmin \
+            --spring.datasource.password=gymPasswd \
+            --spring.jpa.database-platform=org.hibernate.dialect.MariaDBDialect \
+            --spring.config.import= \
+            --spring.profiles.active= > api.log 2>&1 &
+            echo "Waiting for API to be ready..."
+            for i in {1..20}; do
+            curl -s http://localhost:8080/members && break
+            echo "Attempt $i: API not ready yet..."
+            sleep 3
+            done
+            echo "API is ready"
+
+            - name: Show API logs
+              if: always()
+              run: cat api.log
 
       - name: Install Newman
         run: npm install -g newman
