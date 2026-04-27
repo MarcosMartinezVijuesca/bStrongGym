@@ -1,5 +1,6 @@
 package com.gym.bstrong.controller;
 
+import com.gym.bstrong.dto.DeleteResponseDto;
 import com.gym.bstrong.dto.MemberInDtoV2;
 import com.gym.bstrong.dto.MemberOutDtoV2;
 import com.gym.bstrong.exception.MemberNotFoundException;
@@ -43,5 +44,16 @@ public class MemberControllerV2 {
     public ResponseEntity<MemberOutDtoV2> addMemberV2(@Valid @RequestBody MemberInDtoV2 memberInDtoV2) {
         logger.info("POST /v2/members");
         return new ResponseEntity<>(memberService.addMemberV2(memberInDtoV2), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<DeleteResponseDto> deleteMemberV2(@PathVariable long id) throws MemberNotFoundException {
+        logger.info("DELETE /v2/members/{}", id);
+        memberService.deleteMember(id);
+        DeleteResponseDto response = DeleteResponseDto.builder()
+                .message("Member deleted successfully")
+                .id(id)
+                .build();
+        return ResponseEntity.ok(response);
     }
 }

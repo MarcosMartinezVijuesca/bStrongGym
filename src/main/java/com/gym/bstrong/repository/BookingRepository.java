@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface BookingRepository extends CrudRepository<Booking, Long> {
 
+    int countByActivityId(long activityId);
+
     List<Booking> findAll();
 
     @Query("SELECT b FROM Booking b WHERE " +

@@ -1,7 +1,9 @@
 package com.gym.bstrong.controller;
 
 import com.gym.bstrong.dto.MemberInDto;
+import com.gym.bstrong.dto.MemberInDtoV2;
 import com.gym.bstrong.dto.MemberOutDto;
+import com.gym.bstrong.dto.MemberOutDtoV2;
 import com.gym.bstrong.exception.MemberNotFoundException;
 import com.gym.bstrong.service.MemberService;
 import jakarta.validation.Valid;

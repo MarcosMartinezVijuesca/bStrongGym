@@ -1,0 +1,43 @@
+name: bstrong
+
+services:
+  bstrong-db:
+    image: mariadb:11.3.2
+    container_name: bstrong-db
+    restart: always
+    environment:
+      MYSQL_USER: ${BSTRONG_DB_USER}
+      MYSQL_PASSWORD: ${BSTRONG_DB_PASSWORD}
+      MYSQL_DATABASE: ${BSTRONG_DB_NAME}
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ CMD, healthcheck.sh, --connect, --innodb_initialized ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - network-bstrong
+
+  bstrong-api:
+    image: bstrong-api
+    container_name: bstrong-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      bstrong-db:
+        condition: service_healthy
+    environment:
+      BSTRONG_DB_HOST: bstrong-db
+      BSTRONG_DB_NAME: ${BSTRONG_DB_NAME}
+      BSTRONG_DB_USER: ${BSTRONG_DB_USER}
+      BSTRONG_DB_PASSWORD: ${BSTRONG_DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: prod
+    networks:
+      - network-bstrong
+
+networks:
+  network-bstrong:
+    driver: bridge

@@ -20,7 +20,7 @@
   {
     "bookingDate": "2025-01-15",
     "attended": false,
-    "reviewNote": 1,
+    "reviewNote": 3,
     "reviewText": "¡De nada me sirve el Mindfulness!",
     "pricePaid": 5.0,
     "memberId": 3,
