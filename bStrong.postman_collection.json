@@ -3,8 +3,7 @@
     "_postman_id": "c5781eeb-51ba-443f-a630-096375a1caa1",
     "name": "bStrong",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "50792272",
-    "_collection_link": "https://go.postman.co/collection/50792272-c5781eeb-51ba-443f-a630-096375a1caa1?source=collection_link"
+    "_exporter_id": "50792272"
   },
   "item": [
     {
@@ -17,71 +16,54 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response is an array\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.be.an('array');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Members have required fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    data.forEach(member => {\r",
-                  "        pm.expect(member).to.have.property('id');\r",
-                  "        pm.expect(member).to.have.property('firstName');\r",
-                  "        pm.expect(member).to.have.property('lastName');\r",
-                  "        pm.expect(member).to.have.property('active');\r",
-                  "        pm.expect(member).to.have.property('registrationDate');\r",
-                  "    });\r",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Members have required fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    data.forEach(member => {",
+                  "        pm.expect(member).to.have.property('id');",
+                  "        pm.expect(member).to.have.property('firstName');",
+                  "        pm.expect(member).to.have.property('lastName');",
+                  "        pm.expect(member).to.have.property('active');",
+                  "        pm.expect(member).to.have.property('registrationDate');",
+                  "    });",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ]
+              "path": ["members"]
             }
           },
           "response": []
         },
         {
-          "name": "/v2/members (INCLUDES EMAIL + BRITH DATE)",
+          "name": "/v2/members (INCLUDES EMAIL + BIRTH DATE)",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{HOST}}/v2/members/1",
-              "host": [
-                "{{HOST}}"
-              ],
-              "path": [
-                "v2",
-                "members",
-                "1"
-              ]
+              "raw": "http://localhost:8080/v2/members",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["v2", "members"]
             }
           },
           "response": []
@@ -93,56 +75,37 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has required fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('id');\r",
-                  "    pm.expect(data).to.have.property('firstName');\r",
-                  "    pm.expect(data).to.have.property('lastName');\r",
-                  "    pm.expect(data).to.have.property('active');\r",
-                  "    pm.expect(data).to.have.property('registrationDate');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response id matches requested id\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.id).to.eql(3);\r",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has required fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('id');",
+                  "    pm.expect(data).to.have.property('firstName');",
+                  "    pm.expect(data).to.have.property('lastName');",
+                  "    pm.expect(data).to.have.property('active');",
+                  "    pm.expect(data).to.have.property('registrationDate');",
+                  "});",
+                  "",
+                  "pm.test(\"Response id matches requested id\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.id).to.eql(1);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
             "url": {
-              "raw": "http://localhost:8080/members/3",
+              "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "3"
-              ]
+              "path": ["members", "1"]
             }
           },
           "response": []
@@ -153,15 +116,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{HOST}}/v2/members/1",
-              "host": [
-                "{{HOST}}"
-              ],
-              "path": [
-                "v2",
-                "members",
-                "1"
-              ]
+              "raw": "http://localhost:8080/v2/members/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["v2", "members", "1"]
             }
           },
           "response": []
@@ -174,19 +133,10 @@
             "url": {
               "raw": "http://localhost:8080/members?active=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ],
-              "query": [
-                {
-                  "key": "active",
-                  "value": "true"
-                }
-              ]
+              "path": ["members"],
+              "query": [{"key": "active", "value": "true"}]
             }
           },
           "response": []
@@ -199,51 +149,29 @@
             "url": {
               "raw": "http://localhost:8080/members?firstName=Jack",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ],
-              "query": [
-                {
-                  "key": "firstName",
-                  "value": "Jack"
-                }
-              ]
+              "path": ["members"],
+              "query": [{"key": "firstName", "value": "Jack"}]
             }
           },
           "response": []
         },
         {
-          "name": "/members?firstName=Jack&lastName=Sparrow&active=true",
+          "name": "/members?firstName=Hector&lastName=Barbossa&active=true",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
               "raw": "http://localhost:8080/members?firstName=Hector&lastName=Barbossa&active=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ],
+              "path": ["members"],
               "query": [
-                {
-                  "key": "firstName",
-                  "value": "Hector"
-                },
-                {
-                  "key": "lastName",
-                  "value": "Barbossa"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                }
+                {"key": "firstName", "value": "Hector"},
+                {"key": "lastName", "value": "Barbossa"},
+                {"key": "active", "value": "true"}
               ]
             }
           },
@@ -257,22 +185,12 @@
             "url": {
               "raw": "http://localhost:8080/members?firstName=Davy&active=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ],
+              "path": ["members"],
               "query": [
-                {
-                  "key": "firstName",
-                  "value": "Davy"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                }
+                {"key": "firstName", "value": "Davy"},
+                {"key": "active", "value": "true"}
               ]
             }
           },
@@ -285,49 +203,35 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 404\", function () {\r",
-                  "    pm.response.to.have.status(404);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has error fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('code');\r",
-                  "    pm.expect(data).to.have.property('message');\r",
-                  "    pm.expect(data).to.have.property('title');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Error code is 404\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.code).to.eql(404);\r",
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has error fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('code');",
+                  "    pm.expect(data).to.have.property('message');",
+                  "    pm.expect(data).to.have.property('title');",
+                  "});",
+                  "",
+                  "pm.test(\"Error code is 404\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.code).to.eql(404);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "99"
-              ]
+              "path": ["members", "99"]
             }
           },
           "response": []
@@ -339,28 +243,29 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 201\", function () {\r",
-                  "    pm.response.to.have.status(201);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has required fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('id');\r",
-                  "    pm.expect(data).to.have.property('firstName');\r",
-                  "    pm.expect(data).to.have.property('lastName');\r",
-                  "    pm.expect(data).to.have.property('active');\r",
-                  "    pm.expect(data).to.have.property('registrationDate');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Registration date is today\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    const today = new Date().toISOString().split('T')[0];\r",
-                  "    pm.expect(data.registrationDate).to.eql(today);\r",
-                  "});"
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has required fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('id');",
+                  "    pm.expect(data).to.have.property('firstName');",
+                  "    pm.expect(data).to.have.property('lastName');",
+                  "    pm.expect(data).to.have.property('active');",
+                  "    pm.expect(data).to.have.property('registrationDate');",
+                  "});",
+                  "",
+                  "pm.test(\"Registration date is today\", function () {",
+                  "    const data = pm.response.json();",
+                  "    const today = new Date().toISOString().split('T')[0];",
+                  "    pm.expect(data.registrationDate).to.eql(today);",
+                  "});",
+                  "",
+                  "const data = pm.response.json();",
+                  "pm.collectionVariables.set('newMemberId', data.id);"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -369,23 +274,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"birthDate\": \"{{birthDate}}\",\n  \"weight\": {{weight}},\n  \"email\": \"{{email}}\",\n  \"active\": {{active}}\n}\n\n\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"test@test.com\",\n  \"active\": true\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ]
+              "path": ["members"]
             }
           },
           "response": []
@@ -397,24 +294,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"birthDate\": \"{{birthDate}}\",\n  \"weight\": {{weight}},\n  \"email\": \"{{email}}\",\n  \"active\": {{active}}\n}\n\n\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"V2User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"testv2@test.com\",\n  \"active\": true\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/v2/members",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "v2",
-                "members"
-              ]
+              "path": ["v2", "members"]
             }
           },
           "response": []
@@ -426,25 +314,23 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has error fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('code');\r",
-                  "    pm.expect(data).to.have.property('message');\r",
-                  "    pm.expect(data).to.have.property('title');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Error code is 400\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.code).to.eql(400);\r",
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has error fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('code');",
+                  "    pm.expect(data).to.have.property('message');",
+                  "    pm.expect(data).to.have.property('title');",
+                  "});",
+                  "",
+                  "pm.test(\"Error code is 400\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.code).to.eql(400);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -453,23 +339,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members"
-              ]
+              "path": ["members"]
             }
           },
           "response": []
@@ -481,29 +359,27 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has required fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('id');\r",
-                  "    pm.expect(data).to.have.property('firstName');\r",
-                  "    pm.expect(data).to.have.property('lastName');\r",
-                  "    pm.expect(data).to.have.property('active');\r",
-                  "    pm.expect(data).to.have.property('registrationDate');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response values are correct\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.firstName).to.eql(\"Marcos\");\r",
-                  "    pm.expect(data.lastName).to.eql(\"Martínez\");\r",
-                  "    pm.expect(data.active).to.eql(true);\r",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has required fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('id');",
+                  "    pm.expect(data).to.have.property('firstName');",
+                  "    pm.expect(data).to.have.property('lastName');",
+                  "    pm.expect(data).to.have.property('active');",
+                  "    pm.expect(data).to.have.property('registrationDate');",
+                  "});",
+                  "",
+                  "pm.test(\"Response values are correct\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.firstName).to.eql(\"Marcos\");",
+                  "    pm.expect(data.lastName).to.eql(\"Martinez\");",
+                  "    pm.expect(data.active).to.eql(true);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -512,24 +388,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martínez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
-              "raw": "http://localhost:8080/members/2",
+              "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "2"
-              ]
+              "path": ["members", "1"]
             }
           },
           "response": []
@@ -541,25 +408,23 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 400\", function () {\r",
-                  "    pm.response.to.have.status(400);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has error fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('code');\r",
-                  "    pm.expect(data).to.have.property('message');\r",
-                  "    pm.expect(data).to.have.property('title');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Error code is 400\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.code).to.eql(400);\r",
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has error fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('code');",
+                  "    pm.expect(data).to.have.property('message');",
+                  "    pm.expect(data).to.have.property('title');",
+                  "});",
+                  "",
+                  "pm.test(\"Error code is 400\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.code).to.eql(400);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -568,24 +433,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "1"
-              ]
+              "path": ["members", "1"]
             }
           },
           "response": []
@@ -597,25 +453,23 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 404\", function () {\r",
-                  "    pm.response.to.have.status(404);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has error fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('code');\r",
-                  "    pm.expect(data).to.have.property('message');\r",
-                  "    pm.expect(data).to.have.property('title');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Error code is 404\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.code).to.eql(404);\r",
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has error fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('code');",
+                  "    pm.expect(data).to.have.property('message');",
+                  "    pm.expect(data).to.have.property('title');",
+                  "});",
+                  "",
+                  "pm.test(\"Error code is 404\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.code).to.eql(404);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
@@ -624,24 +478,30 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martínez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": \"93\",\n  \"email\": \"marcos@svalero.com\"\n}\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "99"
-              ]
+              "path": ["members", "99"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id (DELETED SUCCESSFULLY - v2)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v2/members/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["v2", "members", "1"]
             }
           },
           "response": []
@@ -653,38 +513,27 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 204\", function () {\r",
-                  "    pm.response.to.have.status(204);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response body is empty\", function () {\r",
-                  "    pm.expect(pm.response.text()).to.be.empty;\r",
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is empty\", function () {",
+                  "    pm.expect(pm.response.text()).to.be.empty;",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
-              "raw": "http://localhost:8080/members/3",
+              "raw": "http://localhost:8080/members/2",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "3"
-              ]
+              "path": ["members", "2"]
             }
           },
           "response": []
@@ -696,71 +545,35 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "pm.test(\"Status code is 404\", function () {\r",
-                  "    pm.response.to.have.status(404);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response has error fields\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data).to.have.property('code');\r",
-                  "    pm.expect(data).to.have.property('message');\r",
-                  "    pm.expect(data).to.have.property('title');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Error code is 404\", function () {\r",
-                  "    const data = pm.response.json();\r",
-                  "    pm.expect(data.code).to.eql(404);\r",
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has error fields\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('code');",
+                  "    pm.expect(data).to.have.property('message');",
+                  "    pm.expect(data).to.have.property('title');",
+                  "});",
+                  "",
+                  "pm.test(\"Error code is 404\", function () {",
+                  "    const data = pm.response.json();",
+                  "    pm.expect(data.code).to.eql(404);",
                   "});"
                 ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Arnold\",\n  \"lastName\": \"Schwarzenegger\",\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": 113.5,\n  \"email\": \"arnold@gym.com\"\n}\n"
-            },
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "members",
-                "99"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "/members:id (DELETED SUCCESSFULLY)",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "http://localhost:8080/v2/members/1",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "v2",
-                "members",
-                "1"
-              ]
+              "path": ["members", "99"]
             }
           },
           "response": []
@@ -772,26 +585,15 @@
       "item": [
         {
           "name": "/monitors",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \t\"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"type\": \"{{type}}\",\n    \"releaseDate\": \"{{releaseDate}}\",\n    \"price\": \"{{price}}\",\n    \"category\": \"{{category}}\",\n    \"comments\": \"{{comments}}\"\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ]
+              "path": ["monitors"]
             }
           },
           "response": []
@@ -804,14 +606,9 @@
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "1"
-              ]
+              "path": ["monitors", "1"]
             }
           },
           "response": []
@@ -824,19 +621,10 @@
             "url": {
               "raw": "http://localhost:8080/monitors?specialty=Esgrima Cardio",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ],
-              "query": [
-                {
-                  "key": "specialty",
-                  "value": "Esgrima Cardio"
-                }
-              ]
+              "path": ["monitors"],
+              "query": [{"key": "specialty", "value": "Esgrima Cardio"}]
             }
           },
           "response": []
@@ -849,19 +637,10 @@
             "url": {
               "raw": "http://localhost:8080/monitors?available=false",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ],
-              "query": [
-                {
-                  "key": "available",
-                  "value": "false"
-                }
-              ]
+              "path": ["monitors"],
+              "query": [{"key": "available", "value": "false"}]
             }
           },
           "response": []
@@ -874,22 +653,12 @@
             "url": {
               "raw": "http://localhost:8080/monitors?name=Will&available=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ],
+              "path": ["monitors"],
               "query": [
-                {
-                  "key": "name",
-                  "value": "Will"
-                },
-                {
-                  "key": "available",
-                  "value": "true"
-                }
+                {"key": "name", "value": "Will"},
+                {"key": "available", "value": "true"}
               ]
             }
           },
@@ -903,14 +672,9 @@
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "99"
-              ]
+              "path": ["monitors", "99"]
             }
           },
           "response": []
@@ -922,23 +686,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"dni\": \"{{dni}}\",\r\n    \"hireDate\": \"{{hireDate}}\",\r\n    \"salary\": {{salary}},\r\n    \"available\": {{available}},\r\n    \"specialty\": \"{{specialty}}\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"Test Monitor\",\n    \"dni\": \"12345678A\",\n    \"hireDate\": \"2024-01-01\",\n    \"salary\": 2000,\n    \"available\": true,\n    \"specialty\": \"Yoga\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ]
+              "path": ["monitors"]
             }
           },
           "response": []
@@ -950,23 +706,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"\",\r\n    \"dni\": \"1\",\r\n    \"hireDate\": \"2025-05-25\",\r\n    \"salary\": -5,\r\n    \"available\": true,\r\n    \"specialty\": \"Programar\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"\",\n    \"dni\": \"1\",\n    \"hireDate\": \"2025-05-25\",\n    \"salary\": -5,\n    \"available\": true,\n    \"specialty\": \"Programar\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors"
-              ]
+              "path": ["monitors"]
             }
           },
           "response": []
@@ -978,24 +726,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"Marcos\", \r\n  \"dni\": \"98765432A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": 2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "1"
-              ]
+              "path": ["monitors", "1"]
             }
           },
           "response": []
@@ -1007,24 +746,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"\", \r\n  \"dni\": \"987654321A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": -2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"name\": \"\",\n  \"dni\": \"987654321A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": -2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "1"
-              ]
+              "path": ["monitors", "1"]
             }
           },
           "response": []
@@ -1036,24 +766,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"Marcos\", \r\n  \"dni\": \"98765432A\",\r\n  \"hireDate\": \"2023-01-15\",\r\n  \"salary\": 2200.0,\r\n  \"available\": false,\r\n  \"specialty\": \"Peso libre\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "99"
-              ]
+              "path": ["monitors", "99"]
             }
           },
           "response": []
@@ -1066,14 +787,9 @@
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "1"
-              ]
+              "path": ["monitors", "1"]
             }
           },
           "response": []
@@ -1086,14 +802,9 @@
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "monitors",
-                "99"
-              ]
+              "path": ["monitors", "99"]
             }
           },
           "response": []
@@ -1111,13 +822,9 @@
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ]
+              "path": ["activities"]
             }
           },
           "response": []
@@ -1130,14 +837,9 @@
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "1"
-              ]
+              "path": ["activities", "1"]
             }
           },
           "response": []
@@ -1150,19 +852,10 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Siesta",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ],
-              "query": [
-                {
-                  "key": "name",
-                  "value": "Siesta"
-                }
-              ]
+              "path": ["activities"],
+              "query": [{"key": "name", "value": "Siesta"}]
             }
           },
           "response": []
@@ -1175,22 +868,12 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Espada&active=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ],
+              "path": ["activities"],
               "query": [
-                {
-                  "key": "name",
-                  "value": "Espada"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                }
+                {"key": "name", "value": "Espada"},
+                {"key": "active", "value": "true"}
               ]
             }
           },
@@ -1204,26 +887,13 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Martillo&active=true&minCapacity=20",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ],
+              "path": ["activities"],
               "query": [
-                {
-                  "key": "name",
-                  "value": "Martillo"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                },
-                {
-                  "key": "minCapacity",
-                  "value": "20"
-                }
+                {"key": "name", "value": "Martillo"},
+                {"key": "active", "value": "true"},
+                {"key": "minCapacity", "value": "20"}
               ]
             }
           },
@@ -1237,14 +907,9 @@
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "99"
-              ]
+              "path": ["activities", "99"]
             }
           },
           "response": []
@@ -1256,23 +921,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"capacity\": {{capacity}},\r\n    \"durationMinutes\": {{durationMinutes}},\r\n    \"active\": {{active}},\r\n    \"pricePerSession\": {{pricePerSession}},\r\n    \"monitorId\": {{monitorId}}\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"Test Activity\",\n    \"description\": \"Test description\",\n    \"capacity\": 20,\n    \"durationMinutes\": 60,\n    \"active\": true,\n    \"pricePerSession\": 5.0,\n    \"monitorId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ]
+              "path": ["activities"]
             }
           },
           "response": []
@@ -1284,23 +941,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"a navegar!\",\r\n    \"capacity\": 0,\r\n    \"durationMinutes\": 0,\r\n    \"active\": false,\r\n    \"pricePerSession\": -1,\r\n    \"monitorId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"\",\n    \"description\": \"a navegar!\",\n    \"capacity\": 0,\n    \"durationMinutes\": 0,\n    \"active\": false,\n    \"pricePerSession\": -1,\n    \"monitorId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities"
-              ]
+              "path": ["activities"]
             }
           },
           "response": []
@@ -1312,54 +961,35 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Yoga Avanzado\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 25,\r\n    \"durationMinutes\": 90,\r\n    \"active\": true,\r\n    \"pricePerSession\": 8.50,\r\n    \"monitorId\": 1\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "1"
-              ]
+              "path": ["activities", "1"]
             }
           },
           "response": []
         },
         {
-          "name": "/activities:id (FIELD ADDED)",
+          "name": "/activities:id (FIELD ADDED - v2)",
           "request": {
             "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Yoga Avanzado\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 25,\r\n    \"active\": true,\r\n    \"durationMinutes\": 90,\r\n    \"monitorId\": 1\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"active\": true,\n    \"durationMinutes\": 90,\n    \"monitorId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/v2/activities/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "v2",
-                "activities",
-                "1"
-              ]
+              "path": ["v2", "activities", "1"]
             }
           },
           "response": []
@@ -1371,24 +1001,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 0,\r\n    \"durationMinutes\": 1,\r\n    \"active\": true,\r\n    \"pricePerSession\": -8,\r\n    \"monitorId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 0,\n    \"durationMinutes\": 1,\n    \"active\": true,\n    \"pricePerSession\": -8,\n    \"monitorId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "1"
-              ]
+              "path": ["activities", "1"]
             }
           },
           "response": []
@@ -1400,24 +1021,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Yoga Avanzado\",\r\n    \"description\": \"Ahora más intenso\",\r\n    \"capacity\": 25,\r\n    \"durationMinutes\": 90,\r\n    \"active\": true,\r\n    \"pricePerSession\": 8.50,\r\n    \"monitorId\": 1\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "99"
-              ]
+              "path": ["activities", "99"]
             }
           },
           "response": []
@@ -1430,14 +1042,9 @@
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "1"
-              ]
+              "path": ["activities", "1"]
             }
           },
           "response": []
@@ -1450,14 +1057,9 @@
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "activities",
-                "99"
-              ]
+              "path": ["activities", "99"]
             }
           },
           "response": []
@@ -1469,26 +1071,15 @@
       "item": [
         {
           "name": "/bookings",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ]
+              "path": ["bookings"]
             }
           },
           "response": []
@@ -1499,16 +1090,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/bookings/2",
+              "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "2"
-              ]
+              "path": ["bookings", "1"]
             }
           },
           "response": []
@@ -1521,47 +1107,28 @@
             "url": {
               "raw": "http://localhost:8080/bookings?memberId=1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ],
-              "query": [
-                {
-                  "key": "memberId",
-                  "value": "1"
-                }
-              ]
+              "path": ["bookings"],
+              "query": [{"key": "memberId", "value": "1"}]
             }
           },
           "response": []
         },
         {
-          "name": "/bookings?memberId=1&attended=false",
+          "name": "/bookings?memberId=1&attended=true",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
               "raw": "http://localhost:8080/bookings?memberId=1&attended=true",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ],
+              "path": ["bookings"],
               "query": [
-                {
-                  "key": "memberId",
-                  "value": "1"
-                },
-                {
-                  "key": "attended",
-                  "value": "true"
-                }
+                {"key": "memberId", "value": "1"},
+                {"key": "attended", "value": "true"}
               ]
             }
           },
@@ -1573,28 +1140,15 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/bookings?memberId=3&attended=false&activityId=3",
+              "raw": "http://localhost:8080/bookings?memberId=1&attended=false&activityId=1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ],
+              "path": ["bookings"],
               "query": [
-                {
-                  "key": "memberId",
-                  "value": "3"
-                },
-                {
-                  "key": "attended",
-                  "value": "false"
-                },
-                {
-                  "key": "activityId",
-                  "value": "3"
-                }
+                {"key": "memberId", "value": "1"},
+                {"key": "attended", "value": "false"},
+                {"key": "activityId", "value": "1"}
               ]
             }
           },
@@ -1606,16 +1160,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/bookings/2",
+              "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "2"
-              ]
+              "path": ["bookings", "99"]
             }
           },
           "response": []
@@ -1627,23 +1176,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"bookingDate\": \"{{bookingDate}}\",\r\n    \"attended\": {{attended}},\r\n    \"reviewNote\": {{reviewNote}},\r\n    \"reviewText\": \"{{reviewText}}\",\r\n    \"pricePaid\": {{pricePaid}},\r\n    \"memberId\": {{memberId}},\r\n    \"activityId\": {{activityId}}\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Excelente clase\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ]
+              "path": ["bookings"]
             }
           },
           "response": []
@@ -1655,23 +1196,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"attended\": true,\r\n    \"reviewNote\": 0,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": -9.50,\r\n    \"memberId\": \"\",\r\n    \"activityId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings"
-              ]
+              "path": ["bookings"]
             }
           },
           "response": []
@@ -1683,24 +1216,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"bookingDate\": \"2025-12-31\",\r\n    \"attended\": true,\r\n    \"reviewNote\": 5,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": 9.50,\r\n    \"memberId\": 1,\r\n    \"activityId\": \"1\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado! Muy intensa.\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "1"
-              ]
+              "path": ["bookings", "1"]
             }
           },
           "response": []
@@ -1712,24 +1236,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"bookingDate\": null,\r\n    \"attended\": true,\r\n    \"reviewNote\": 0,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": -9.50,\r\n    \"memberId\": \"\",\r\n    \"activityId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"bookingDate\": null,\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
-              "raw": "http://localhost:8080/bookings/3",
+              "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "3"
-              ]
+              "path": ["bookings", "1"]
             }
           },
           "response": []
@@ -1741,24 +1256,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"bookingDate\": \"2025-12-31\",\r\n    \"attended\": true,\r\n    \"reviewNote\": 5,\r\n    \"reviewText\": \"¡Me ha encantado! Muy intensa.\",\r\n    \"pricePaid\": 9.50,\r\n    \"memberId\": 1,\r\n    \"activityId\": \"1\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "99"
-              ]
+              "path": ["bookings", "99"]
             }
           },
           "response": []
@@ -1771,14 +1277,9 @@
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "1"
-              ]
+              "path": ["bookings", "1"]
             }
           },
           "response": []
@@ -1791,14 +1292,9 @@
             "url": {
               "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "bookings",
-                "99"
-              ]
+              "path": ["bookings", "99"]
             }
           },
           "response": []
@@ -1810,160 +1306,84 @@
       "item": [
         {
           "name": "/subscriptions",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions"
-              ]
+              "path": ["subscriptions"]
             }
           },
           "response": []
         },
         {
           "name": "/subscriptions:id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/2",
+              "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "2"
+              "path": ["subscriptions", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions?memberId=1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/subscriptions?memberId=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions"],
+              "query": [{"key": "memberId", "value": "1"}]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions?memberId=1&active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/subscriptions?memberId=1&active=true",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions"],
+              "query": [
+                {"key": "memberId", "value": "1"},
+                {"key": "active", "value": "true"}
               ]
             }
           },
           "response": []
         },
         {
-          "name": "/subscriptions?memberId=2",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
+          "name": "/subscriptions?memberId=1&active=true&type=MONTHLY",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=2",
+              "raw": "http://localhost:8080/subscriptions?memberId=1&active=true&type=MONTHLY",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions"
-              ],
+              "path": ["subscriptions"],
               "query": [
-                {
-                  "key": "memberId",
-                  "value": "2"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "/subscriptions?memberId=2&active=true",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
-            "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=3&active=true",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "subscriptions"
-              ],
-              "query": [
-                {
-                  "key": "memberId",
-                  "value": "3"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "/subscriptions?memberId=2&active=true&type=QUARTERLY",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
-            "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=2&active=true&type=QUARTERLY",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "subscriptions"
-              ],
-              "query": [
-                {
-                  "key": "memberId",
-                  "value": "2"
-                },
-                {
-                  "key": "active",
-                  "value": "true"
-                },
-                {
-                  "key": "type",
-                  "value": "QUARTERLY"
-                }
+                {"key": "memberId", "value": "1"},
+                {"key": "active", "value": "true"},
+                {"key": "type", "value": "MONTHLY"}
               ]
             }
           },
@@ -1971,27 +1391,15 @@
         },
         {
           "name": "/subscriptions:id (NOT FOUND)",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "99"
-              ]
+              "path": ["subscriptions", "99"]
             }
           },
           "response": []
@@ -2003,23 +1411,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"type\": \"{{type}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"endDate\": \"{{endDate}}\",\r\n    \"price\": {{price}},\r\n    \"active\": {{active}},\r\n    \"autoRenewal\": {{autoRenewal}},\r\n    \"memberId\": {{memberId}}\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 29.99,\n    \"active\": true,\n    \"autoRenewal\": true,\n    \"memberId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions"
-              ]
+              "path": ["subscriptions"]
             }
           },
           "response": []
@@ -2031,23 +1431,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"type\": \"trimestral\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"price\": -8,\r\n    \"active\": false,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions"
-              ]
+              "path": ["subscriptions"]
             }
           },
           "response": []
@@ -2059,24 +1451,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 35.50,\r\n    \"active\": true,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": 2\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/2",
+              "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "2"
-              ]
+              "path": ["subscriptions", "1"]
             }
           },
           "response": []
@@ -2088,24 +1471,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"type\": \"trimestral\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"price\": -8,\r\n    \"active\": false,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": \"\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/2",
+              "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "2"
-              ]
+              "path": ["subscriptions", "1"]
             }
           },
           "response": []
@@ -2117,24 +1491,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 35.50,\r\n    \"active\": true,\r\n    \"autoRenewal\": false,\r\n    \"memberId\": 2\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
+              "options": {"raw": {"language": "json"}}
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "99"
-              ]
+              "path": ["subscriptions", "99"]
             }
           },
           "response": []
@@ -2144,21 +1509,12 @@
           "request": {
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
               "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "1"
-              ]
+              "path": ["subscriptions", "1"]
             }
           },
           "response": []
@@ -2168,21 +1524,12 @@
           "request": {
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"type\": \"MONTHLY\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-02-01\",\r\n    \"price\": 29.99,\r\n    \"isActive\": true,\r\n    \"autoRenewal\": true,\r\n    \"memberId\": 1\r\n}"
-            },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/1",
+              "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "8080",
-              "path": [
-                "subscriptions",
-                "1"
-              ]
+              "path": ["subscriptions", "99"]
             }
           },
           "response": []
