@@ -48,6 +48,17 @@ jobs:
       - name: Show API logs
         if: always()
         run: cat api.log
+      - name: Load initial data
+        run: |
+          curl -s -X POST http://localhost:8080/monitors \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Test Monitor","dni":"12345678A","hireDate":"2024-01-01","salary":2000,"available":true,"specialty":"Yoga"}'
+          curl -s -X POST http://localhost:8080/members \
+             -H "Content-Type: application/json" \
+            -d '{"firstName":"Jack","lastName":"Sparrow","birthDate":"1980-01-01","weight":80,"email":"jack@test.com","active":true}'
+          curl -s -X POST http://localhost:8080/members \
+            -H "Content-Type: application/json" \
+            -d '{"firstName":"Davy","lastName":"Jones","birthDate":"1975-05-10","weight":90,"email":"davy@test.com","active":true}'
 
       - name: Install Newman
         run: npm install -g newman

@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "c5781eeb-51ba-443f-a630-096375a1caa1",
-    "name": "bStrong",
+    "_postman_id": "8b17479e-c5ce-4f9b-aeda-1840680361e7",
+    "name": "bStrong Copy",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "50792272"
+    "_exporter_id": "50792272",
+    "_collection_link": "https://go.postman.co/collection/50792272-8b17479e-c5ce-4f9b-aeda-1840680361e7?source=collection_link"
   },
   "item": [
     {
@@ -46,9 +47,13 @@
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"]
+              "path": [
+                "members"
+              ]
             }
           },
           "response": []
@@ -61,9 +66,14 @@
             "url": {
               "raw": "http://localhost:8080/v2/members",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["v2", "members"]
+              "path": [
+                "v2",
+                "members"
+              ]
             }
           },
           "response": []
@@ -93,7 +103,9 @@
                   "    pm.expect(data.id).to.eql(1);",
                   "});"
                 ],
-                "type": "text/javascript"
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -103,9 +115,14 @@
             "url": {
               "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "1"]
+              "path": [
+                "members",
+                "1"
+              ]
             }
           },
           "response": []
@@ -118,9 +135,15 @@
             "url": {
               "raw": "http://localhost:8080/v2/members/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["v2", "members", "1"]
+              "path": [
+                "v2",
+                "members",
+                "1"
+              ]
             }
           },
           "response": []
@@ -133,10 +156,19 @@
             "url": {
               "raw": "http://localhost:8080/members?active=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"],
-              "query": [{"key": "active", "value": "true"}]
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
             }
           },
           "response": []
@@ -149,10 +181,19 @@
             "url": {
               "raw": "http://localhost:8080/members?firstName=Jack",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"],
-              "query": [{"key": "firstName", "value": "Jack"}]
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Jack"
+                }
+              ]
             }
           },
           "response": []
@@ -165,13 +206,26 @@
             "url": {
               "raw": "http://localhost:8080/members?firstName=Hector&lastName=Barbossa&active=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"],
+              "path": [
+                "members"
+              ],
               "query": [
-                {"key": "firstName", "value": "Hector"},
-                {"key": "lastName", "value": "Barbossa"},
-                {"key": "active", "value": "true"}
+                {
+                  "key": "firstName",
+                  "value": "Hector"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Barbossa"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -185,12 +239,22 @@
             "url": {
               "raw": "http://localhost:8080/members?firstName=Davy&active=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"],
+              "path": [
+                "members"
+              ],
               "query": [
-                {"key": "firstName", "value": "Davy"},
-                {"key": "active", "value": "true"}
+                {
+                  "key": "firstName",
+                  "value": "Davy"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -229,9 +293,14 @@
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "99"]
+              "path": [
+                "members",
+                "99"
+              ]
             }
           },
           "response": []
@@ -262,10 +331,12 @@
                   "    pm.expect(data.registrationDate).to.eql(today);",
                   "});",
                   "",
-                  "const data = pm.response.json();",
-                  "pm.collectionVariables.set('newMemberId', data.id);"
+                  "const responseData = pm.response.json();",
+                  "pm.collectionVariables.set('newMemberId', responseData.id);"
                 ],
-                "type": "text/javascript"
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -275,14 +346,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"test@test.com\",\n  \"active\": true\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"]
+              "path": [
+                "members"
+              ]
             }
           },
           "response": []
@@ -295,14 +374,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"V2User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"testv2@test.com\",\n  \"active\": true\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/v2/members",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["v2", "members"]
+              "path": [
+                "v2",
+                "members"
+              ]
             }
           },
           "response": []
@@ -340,14 +428,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/members",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members"]
+              "path": [
+                "members"
+              ]
             }
           },
           "response": []
@@ -389,14 +485,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "1"]
+              "path": [
+                "members",
+                "1"
+              ]
             }
           },
           "response": []
@@ -434,14 +539,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/members/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "1"]
+              "path": [
+                "members",
+                "1"
+              ]
             }
           },
           "response": []
@@ -479,14 +593,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "99"]
+              "path": [
+                "members",
+                "99"
+              ]
             }
           },
           "response": []
@@ -499,9 +622,15 @@
             "url": {
               "raw": "http://localhost:8080/v2/members/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["v2", "members", "1"]
+              "path": [
+                "v2",
+                "members",
+                "1"
+              ]
             }
           },
           "response": []
@@ -531,9 +660,14 @@
             "url": {
               "raw": "http://localhost:8080/members/2",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "2"]
+              "path": [
+                "members",
+                "2"
+              ]
             }
           },
           "response": []
@@ -571,9 +705,14 @@
             "url": {
               "raw": "http://localhost:8080/members/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["members", "99"]
+              "path": [
+                "members",
+                "99"
+              ]
             }
           },
           "response": []
@@ -591,9 +730,13 @@
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"]
+              "path": [
+                "monitors"
+              ]
             }
           },
           "response": []
@@ -606,9 +749,14 @@
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "1"]
+              "path": [
+                "monitors",
+                "1"
+              ]
             }
           },
           "response": []
@@ -621,10 +769,19 @@
             "url": {
               "raw": "http://localhost:8080/monitors?specialty=Esgrima Cardio",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"],
-              "query": [{"key": "specialty", "value": "Esgrima Cardio"}]
+              "path": [
+                "monitors"
+              ],
+              "query": [
+                {
+                  "key": "specialty",
+                  "value": "Esgrima Cardio"
+                }
+              ]
             }
           },
           "response": []
@@ -637,10 +794,19 @@
             "url": {
               "raw": "http://localhost:8080/monitors?available=false",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"],
-              "query": [{"key": "available", "value": "false"}]
+              "path": [
+                "monitors"
+              ],
+              "query": [
+                {
+                  "key": "available",
+                  "value": "false"
+                }
+              ]
             }
           },
           "response": []
@@ -653,12 +819,22 @@
             "url": {
               "raw": "http://localhost:8080/monitors?name=Will&available=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"],
+              "path": [
+                "monitors"
+              ],
               "query": [
-                {"key": "name", "value": "Will"},
-                {"key": "available", "value": "true"}
+                {
+                  "key": "name",
+                  "value": "Will"
+                },
+                {
+                  "key": "available",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -672,9 +848,14 @@
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "99"]
+              "path": [
+                "monitors",
+                "99"
+              ]
             }
           },
           "response": []
@@ -687,14 +868,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Test Monitor\",\n    \"dni\": \"12345678A\",\n    \"hireDate\": \"2024-01-01\",\n    \"salary\": 2000,\n    \"available\": true,\n    \"specialty\": \"Yoga\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"]
+              "path": [
+                "monitors"
+              ]
             }
           },
           "response": []
@@ -707,14 +896,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"dni\": \"1\",\n    \"hireDate\": \"2025-05-25\",\n    \"salary\": -5,\n    \"available\": true,\n    \"specialty\": \"Programar\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/monitors",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors"]
+              "path": [
+                "monitors"
+              ]
             }
           },
           "response": []
@@ -727,14 +924,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "1"]
+              "path": [
+                "monitors",
+                "1"
+              ]
             }
           },
           "response": []
@@ -747,14 +953,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"\",\n  \"dni\": \"987654321A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": -2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "1"]
+              "path": [
+                "monitors",
+                "1"
+              ]
             }
           },
           "response": []
@@ -767,14 +982,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "99"]
+              "path": [
+                "monitors",
+                "99"
+              ]
             }
           },
           "response": []
@@ -787,9 +1011,14 @@
             "url": {
               "raw": "http://localhost:8080/monitors/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "1"]
+              "path": [
+                "monitors",
+                "1"
+              ]
             }
           },
           "response": []
@@ -802,9 +1031,14 @@
             "url": {
               "raw": "http://localhost:8080/monitors/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["monitors", "99"]
+              "path": [
+                "monitors",
+                "99"
+              ]
             }
           },
           "response": []
@@ -822,9 +1056,13 @@
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"]
+              "path": [
+                "activities"
+              ]
             }
           },
           "response": []
@@ -837,9 +1075,14 @@
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "1"]
+              "path": [
+                "activities",
+                "1"
+              ]
             }
           },
           "response": []
@@ -852,10 +1095,19 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Siesta",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"],
-              "query": [{"key": "name", "value": "Siesta"}]
+              "path": [
+                "activities"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Siesta"
+                }
+              ]
             }
           },
           "response": []
@@ -868,12 +1120,22 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Espada&active=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"],
+              "path": [
+                "activities"
+              ],
               "query": [
-                {"key": "name", "value": "Espada"},
-                {"key": "active", "value": "true"}
+                {
+                  "key": "name",
+                  "value": "Espada"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -887,13 +1149,26 @@
             "url": {
               "raw": "http://localhost:8080/activities?name=Martillo&active=true&minCapacity=20",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"],
+              "path": [
+                "activities"
+              ],
               "query": [
-                {"key": "name", "value": "Martillo"},
-                {"key": "active", "value": "true"},
-                {"key": "minCapacity", "value": "20"}
+                {
+                  "key": "name",
+                  "value": "Martillo"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                },
+                {
+                  "key": "minCapacity",
+                  "value": "20"
+                }
               ]
             }
           },
@@ -907,9 +1182,14 @@
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "99"]
+              "path": [
+                "activities",
+                "99"
+              ]
             }
           },
           "response": []
@@ -922,14 +1202,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Test Activity\",\n    \"description\": \"Test description\",\n    \"capacity\": 20,\n    \"durationMinutes\": 60,\n    \"active\": true,\n    \"pricePerSession\": 5.0,\n    \"monitorId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"]
+              "path": [
+                "activities"
+              ]
             }
           },
           "response": []
@@ -942,14 +1230,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"description\": \"a navegar!\",\n    \"capacity\": 0,\n    \"durationMinutes\": 0,\n    \"active\": false,\n    \"pricePerSession\": -1,\n    \"monitorId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/activities",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities"]
+              "path": [
+                "activities"
+              ]
             }
           },
           "response": []
@@ -962,14 +1258,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "1"]
+              "path": [
+                "activities",
+                "1"
+              ]
             }
           },
           "response": []
@@ -982,14 +1287,24 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"active\": true,\n    \"durationMinutes\": 90,\n    \"monitorId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/v2/activities/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["v2", "activities", "1"]
+              "path": [
+                "v2",
+                "activities",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1002,14 +1317,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 0,\n    \"durationMinutes\": 1,\n    \"active\": true,\n    \"pricePerSession\": -8,\n    \"monitorId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "1"]
+              "path": [
+                "activities",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1022,14 +1346,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "99"]
+              "path": [
+                "activities",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1042,9 +1375,14 @@
             "url": {
               "raw": "http://localhost:8080/activities/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "1"]
+              "path": [
+                "activities",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1057,9 +1395,14 @@
             "url": {
               "raw": "http://localhost:8080/activities/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["activities", "99"]
+              "path": [
+                "activities",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1077,9 +1420,13 @@
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"]
+              "path": [
+                "bookings"
+              ]
             }
           },
           "response": []
@@ -1092,9 +1439,14 @@
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "1"]
+              "path": [
+                "bookings",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1107,10 +1459,19 @@
             "url": {
               "raw": "http://localhost:8080/bookings?memberId=1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"],
-              "query": [{"key": "memberId", "value": "1"}]
+              "path": [
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                }
+              ]
             }
           },
           "response": []
@@ -1123,12 +1484,22 @@
             "url": {
               "raw": "http://localhost:8080/bookings?memberId=1&attended=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"],
+              "path": [
+                "bookings"
+              ],
               "query": [
-                {"key": "memberId", "value": "1"},
-                {"key": "attended", "value": "true"}
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "attended",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -1142,13 +1513,26 @@
             "url": {
               "raw": "http://localhost:8080/bookings?memberId=1&attended=false&activityId=1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"],
+              "path": [
+                "bookings"
+              ],
               "query": [
-                {"key": "memberId", "value": "1"},
-                {"key": "attended", "value": "false"},
-                {"key": "activityId", "value": "1"}
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "attended",
+                  "value": "false"
+                },
+                {
+                  "key": "activityId",
+                  "value": "1"
+                }
               ]
             }
           },
@@ -1162,9 +1546,14 @@
             "url": {
               "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "99"]
+              "path": [
+                "bookings",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1177,14 +1566,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Excelente clase\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"]
+              "path": [
+                "bookings"
+              ]
             }
           },
           "response": []
@@ -1197,14 +1594,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/bookings",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings"]
+              "path": [
+                "bookings"
+              ]
             }
           },
           "response": []
@@ -1217,14 +1622,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado! Muy intensa.\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "1"]
+              "path": [
+                "bookings",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1237,14 +1651,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": null,\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "1"]
+              "path": [
+                "bookings",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1257,14 +1680,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "99"]
+              "path": [
+                "bookings",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1277,9 +1709,14 @@
             "url": {
               "raw": "http://localhost:8080/bookings/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "1"]
+              "path": [
+                "bookings",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1292,9 +1729,14 @@
             "url": {
               "raw": "http://localhost:8080/bookings/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["bookings", "99"]
+              "path": [
+                "bookings",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1312,9 +1754,13 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"]
+              "path": [
+                "subscriptions"
+              ]
             }
           },
           "response": []
@@ -1327,9 +1773,14 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "1"]
+              "path": [
+                "subscriptions",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1342,10 +1793,19 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions?memberId=1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"],
-              "query": [{"key": "memberId", "value": "1"}]
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                }
+              ]
             }
           },
           "response": []
@@ -1358,12 +1818,22 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions?memberId=1&active=true",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"],
+              "path": [
+                "subscriptions"
+              ],
               "query": [
-                {"key": "memberId", "value": "1"},
-                {"key": "active", "value": "true"}
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -1377,13 +1847,26 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions?memberId=1&active=true&type=MONTHLY",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"],
+              "path": [
+                "subscriptions"
+              ],
               "query": [
-                {"key": "memberId", "value": "1"},
-                {"key": "active", "value": "true"},
-                {"key": "type", "value": "MONTHLY"}
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                },
+                {
+                  "key": "type",
+                  "value": "MONTHLY"
+                }
               ]
             }
           },
@@ -1397,9 +1880,14 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "99"]
+              "path": [
+                "subscriptions",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1412,14 +1900,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 29.99,\n    \"active\": true,\n    \"autoRenewal\": true,\n    \"memberId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"]
+              "path": [
+                "subscriptions"
+              ]
             }
           },
           "response": []
@@ -1432,14 +1928,22 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions"]
+              "path": [
+                "subscriptions"
+              ]
             }
           },
           "response": []
@@ -1452,14 +1956,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "1"]
+              "path": [
+                "subscriptions",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1472,14 +1985,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "1"]
+              "path": [
+                "subscriptions",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1492,14 +2014,23 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
-              "options": {"raw": {"language": "json"}}
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "99"]
+              "path": [
+                "subscriptions",
+                "99"
+              ]
             }
           },
           "response": []
@@ -1512,9 +2043,14 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "1"]
+              "path": [
+                "subscriptions",
+                "1"
+              ]
             }
           },
           "response": []
@@ -1527,9 +2063,14 @@
             "url": {
               "raw": "http://localhost:8080/subscriptions/99",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["subscriptions", "99"]
+              "path": [
+                "subscriptions",
+                "99"
+              ]
             }
           },
           "response": []
