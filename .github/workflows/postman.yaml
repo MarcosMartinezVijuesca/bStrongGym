@@ -53,4 +53,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman tests
-        run: newman run bStrong.postman_collection.json
+        run: newman run bStrong.postman_collectionV2.1.json
