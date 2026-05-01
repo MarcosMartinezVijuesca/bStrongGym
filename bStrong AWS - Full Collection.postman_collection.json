@@ -1,0 +1,1683 @@
+{
+  "info": {
+    "_postman_id": "868b1ac6-9554-4a84-acc2-91e6391b83b3",
+    "name": "bStrong AWS - Full Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50792272",
+    "_collection_link": "https://go.postman.co/collection/50792272-868b1ac6-9554-4a84-acc2-91e6391b83b3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Members",
+      "item": [
+        {
+          "name": "/members",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/v2/members (INCLUDES EMAIL + BIRTH DATE)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/v2/members",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "v2",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/v2/members:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/v2/members/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "v2",
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members?active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members?active=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members?firstName=Jack",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members?firstName=Jack",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Jack"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members?firstName=Hector&lastName=Barbossa&active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members?firstName=Hector&lastName=Barbossa&active=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Hector"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Barbossa"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members?firstName=Davy&active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members?firstName=Davy&active=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Davy"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id (NOT FOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"test@test.com\",\n  \"active\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/members",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/v2/members (EMAIL VALIDATION ADDED)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"V2User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"testv2@test.com\",\n  \"active\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/v2/members",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "v2",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members (INVALID DATA)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/members",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/member:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/members/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/member:id (INVALID DATA)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/members/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/member:id (NOT FOUND)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/members/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id (DELETED SUCCESSFULLY - v2)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/v2/members/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "v2",
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members/2",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/members:id (NOT FOUND)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/members/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "members",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Monitors",
+      "item": [
+        {
+          "name": "/monitors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors?specialty=Esgrima Cardio",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors?specialty=Esgrima Cardio",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ],
+              "query": [
+                {
+                  "key": "specialty",
+                  "value": "Esgrima Cardio"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors?available=false",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors?available=false",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ],
+              "query": [
+                {
+                  "key": "available",
+                  "value": "false"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors?name=Will&available=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors?name=Will&available=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Will"
+                },
+                {
+                  "key": "available",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id (NOT FOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Test Monitor\",\n    \"dni\": \"12345678A\",\n    \"hireDate\": \"2024-01-01\",\n    \"salary\": 2000,\n    \"available\": true,\n    \"specialty\": \"Yoga\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/monitors",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors (INVALID DATA)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"\",\n    \"dni\": \"1\",\n    \"hireDate\": \"2025-05-25\",\n    \"salary\": -5,\n    \"available\": true,\n    \"specialty\": \"Programar\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/monitors",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id (INVALID DATA)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"dni\": \"987654321A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": -2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id (NOT FOUND)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/monitors:id (NOT FOUND)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/monitors/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "monitors",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Activities",
+      "item": [
+        {
+          "name": "/activities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities?name=Siesta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities?name=Siesta",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Siesta"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities?name=Espada&active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities?name=Espada&active=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Espada"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities?name=Martillo&active=true&minCapacity=20",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities?name=Martillo&active=true&minCapacity=20",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Martillo"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                },
+                {
+                  "key": "minCapacity",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id (NOT FOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Test Activity\",\n    \"description\": \"Test description\",\n    \"capacity\": 20,\n    \"durationMinutes\": 60,\n    \"active\": true,\n    \"pricePerSession\": 5.0,\n    \"monitorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/activities",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities (INVALID DATA)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"\",\n    \"description\": \"a navegar!\",\n    \"capacity\": 0,\n    \"durationMinutes\": 0,\n    \"active\": false,\n    \"pricePerSession\": -1,\n    \"monitorId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/activities",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/activities/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id (FIELD ADDED - v2)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"active\": true,\n    \"durationMinutes\": 90,\n    \"monitorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/v2/activities/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "v2",
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id (INVALID DATA)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 0,\n    \"durationMinutes\": 1,\n    \"active\": true,\n    \"pricePerSession\": -8,\n    \"monitorId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/activities/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id (NOT FOUND)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/activities/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/activities:id (NOT FOUND)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/activities/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "activities",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "/bookings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings?memberId=1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings?memberId=1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings?memberId=1&attended=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings?memberId=1&attended=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "attended",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings?memberId=1&attended=false&activityId=1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings?memberId=1&attended=false&activityId=1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "attended",
+                  "value": "false"
+                },
+                {
+                  "key": "activityId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id (NOT FOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Excelente clase\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/bookings",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings (INVALID DATA)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/bookings",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado! Muy intensa.\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id (INVALID DATA)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookingDate\": null,\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id (NOT FOUND)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/bookings:id (NOT FOUND)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/bookings/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "bookings",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Subscription",
+      "item": [
+        {
+          "name": "/subscriptions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions?memberId=1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions?memberId=1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions?memberId=1&active=true",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions?memberId=1&active=true",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions?memberId=1&active=true&type=MONTHLY",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions?memberId=1&active=true&type=MONTHLY",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "1"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                },
+                {
+                  "key": "type",
+                  "value": "MONTHLY"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id (NOT FOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 29.99,\n    \"active\": true,\n    \"autoRenewal\": true,\n    \"memberId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions (INVALID DATA)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id (INVALID DATA)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id (NOT FOUND)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/1",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/subscriptions:id (NOT FOUND)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{AWSHOST}}/subscriptions/99",
+              "host": [
+                "{{AWSHOST}}"
+              ],
+              "path": [
+                "subscriptions",
+                "99"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "newMemberId",
+      "value": ""
+    }
+  ]
+}
