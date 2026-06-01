@@ -806,6 +806,160 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+  /v2/members:
+    get:
+      summary: Returns a list of members (v2)
+      description: |
+        Returns a list of all available members with extended information.
+        Includes email and birthDate in addition to v1 fields.
+      parameters:
+        - name: active
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: firstName
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MemberOutDtoV2'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register member (v2)
+      description: Register a new member. Email is now mandatory in v2.
+      requestBody:
+        description: Member new data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberInDtoV2'
+      responses:
+        '201':
+          description: Member registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberOutDtoV2'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /v2/members/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get member by ID (v2)
+      description: Returns a member with extended information including email and birthDate.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberOutDtoV2'
+        '404':
+          description: Member Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete member (v2)
+      description: Deletes a member and returns a confirmation message instead of 204.
+      responses:
+        '200':
+          description: Member deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResponseDto'
+        '404':
+          description: Member Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /v2/activities/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+          format: int64
+    put:
+      summary: Modify activity (v2)
+      description: Updates an activity and returns totalBookings count in the response.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityInDto'
+      responses:
+        '200':
+          description: Activity modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityOutDtoV2'
+        '404':
+          description: Activity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
 
 components:
   schemas:
@@ -1286,6 +1440,106 @@ components:
         active: true
         autoRenewal: true
         memberName: Pedro
+    MemberOutDtoV2:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+        firstName:
+          type: string
+        lastName:
+          type: string
+        active:
+          type: boolean
+        registrationDate:
+          type: string
+          format: date
+        email:
+          type: string
+        birthDate:
+          type: string
+          format: date
+      example:
+        id: 1
+        firstName: John
+        lastName: Doe
+        active: true
+        registrationDate: 2026-01-01
+        email: john@example.com
+        birthDate: 1990-05-15
+
+    MemberInDtoV2:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - email
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        birthDate:
+          type: string
+          format: date
+        active:
+          type: boolean
+        weight:
+          type: number
+          format: float
+        email:
+          type: string
+          format: email
+      example:
+        firstName: John
+        lastName: Doe
+        birthDate: 1990-05-15
+        active: true
+        weight: 75.0
+        email: john@example.com
+
+    ActivityOutDtoV2:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+        capacity:
+          type: integer
+        active:
+          type: boolean
+        durationMinutes:
+          type: integer
+        monitorName:
+          type: string
+        totalBookings:
+          type: integer
+      example:
+        id: 1
+        name: Yoga Avanzado
+        description: Clase intensa
+        capacity: 25
+        active: true
+        durationMinutes: 90
+        monitorName: Elizabeth Swann
+        totalBookings: 3
+
+    DeleteResponseDto:
+      type: object
+      properties:
+        message:
+          type: string
+        id:
+          type: number
+          format: int64
+      example:
+        message: Member deleted successfully
+        id: 1
 
     ErrorResponse:
       type: object

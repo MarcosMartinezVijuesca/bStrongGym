@@ -4,9 +4,11 @@ import com.gym.bstrong.domain.Activity;
 import com.gym.bstrong.domain.Monitor;
 import com.gym.bstrong.dto.ActivityInDto;
 import com.gym.bstrong.dto.ActivityOutDto;
+import com.gym.bstrong.dto.ActivityOutDtoV2;
 import com.gym.bstrong.exception.ActivityNotFoundException;
 import com.gym.bstrong.exception.MonitorNotFoundException;
 import com.gym.bstrong.repository.ActivityRepository;
+import com.gym.bstrong.repository.BookingRepository;
 import com.gym.bstrong.repository.MonitorRepository;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -26,6 +28,9 @@ public class ActivityService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private BookingRepository bookingRepository;
 
     public List<ActivityOutDto> findAll(String name, Boolean active, Integer minCapacity) {
         List<Activity> activities;
@@ -78,5 +83,27 @@ public class ActivityService {
         Activity activity = activityRepository.findById(id)
                 .orElseThrow(ActivityNotFoundException::new);
         activityRepository.delete(activity);
+    }
+
+    public ActivityOutDtoV2 modifyActivityV2(long id, ActivityInDto activityInDto) throws ActivityNotFoundException, MonitorNotFoundException {
+        Activity activity = activityRepository.findById(id)
+                .orElseThrow(ActivityNotFoundException::new);
+
+        modelMapper.map(activityInDto, activity);
+        activity.setId(id);
+
+        if (activity.getMonitor() == null || activity.getMonitor().getId() != activityInDto.getMonitorId()) {
+            Monitor monitor = monitorRepository.findById(activityInDto.getMonitorId())
+                    .orElseThrow(MonitorNotFoundException::new);
+            activity.setMonitor(monitor);
+        }
+
+        Activity modifiedActivity = activityRepository.save(activity);
+        ActivityOutDtoV2 dto = modelMapper.map(modifiedActivity, ActivityOutDtoV2.class);
+        dto.setTotalBookings(bookingRepository.countByActivityId(id));
+        if (modifiedActivity.getMonitor() != null) {
+            dto.setMonitorName(modifiedActivity.getMonitor().getName());
+        }
+        return dto;
     }
 }

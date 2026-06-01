@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "8b17479e-c5ce-4f9b-aeda-1840680361e7",
-    "name": "bStrong Copy",
+    "_postman_id": "4df4e167-f006-4686-b527-f347896d7c06",
+    "name": "bStrong APIMAN - full",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "50792272",
-    "_collection_link": "https://go.postman.co/collection/50792272-8b17479e-c5ce-4f9b-aeda-1840680361e7?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/50792272-4df4e167-f006-4686-b527-f347896d7c06?source=collection_link"
   },
   "item": [
     {
@@ -43,14 +43,17 @@
           ],
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ]
@@ -62,14 +65,17 @@
           "name": "/v2/members (INCLUDES EMAIL + BIRTH DATE)",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/v2/members",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/v2/members",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "v2",
                 "members"
@@ -111,14 +117,17 @@
           ],
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "1"
@@ -131,14 +140,17 @@
           "name": "/v2/members:id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/v2/members/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/v2/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "v2",
                 "members",
@@ -152,14 +164,17 @@
           "name": "/members?active=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members?active=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members?active=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ],
@@ -177,14 +192,17 @@
           "name": "/members?firstName=Jack",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members?firstName=Jack",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members?firstName=Jack",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ],
@@ -202,14 +220,17 @@
           "name": "/members?firstName=Hector&lastName=Barbossa&active=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members?firstName=Hector&lastName=Barbossa&active=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members?firstName=Hector&lastName=Barbossa&active=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ],
@@ -235,14 +256,17 @@
           "name": "/members?firstName=Davy&active=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members?firstName=Davy&active=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members?firstName=Davy&active=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ],
@@ -289,14 +313,17 @@
           ],
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "99"
@@ -342,7 +369,12 @@
           ],
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"test@test.com\",\n  \"active\": true\n}",
@@ -353,12 +385,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/members",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ]
@@ -370,7 +400,12 @@
           "name": "/v2/members (EMAIL VALIDATION ADDED)",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"V2User\",\n  \"birthDate\": \"1990-01-01\",\n  \"weight\": 70,\n  \"email\": \"testv2@test.com\",\n  \"active\": true\n}",
@@ -381,12 +416,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/v2/members",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/v2/members",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "v2",
                 "members"
@@ -424,7 +457,12 @@
           ],
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"lastName\": null,\n  \"birthDate\": \"1947-07-30\",\n  \"weight\": -113.5,\n  \"email\": \"blablabla\"\n}",
@@ -435,12 +473,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/members",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members"
               ]
@@ -481,7 +517,12 @@
           ],
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": true,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
@@ -492,12 +533,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/members/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "1"
@@ -535,7 +574,12 @@
           ],
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"birthDate\": \"2017-07-30\",\n  \"weight\": -1,\n  \"email\": \"blabla\"\n}",
@@ -546,12 +590,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/members/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "1"
@@ -589,7 +631,12 @@
           ],
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"firstName\": \"Marcos\",\n  \"lastName\": \"Martinez\",\n  \"birthDate\": \"2000-01-27\",\n  \"active\": false,\n  \"weight\": 93,\n  \"email\": \"marcos@svalero.com\"\n}",
@@ -600,12 +647,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/members/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "99"
@@ -618,14 +663,17 @@
           "name": "/members:id (DELETED SUCCESSFULLY - v2)",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/v2/members/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/v2/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "v2",
                 "members",
@@ -650,23 +698,28 @@
                   "    pm.expect(pm.response.text()).to.be.empty;",
                   "});"
                 ],
-                "type": "text/javascript"
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members/2",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
-                "2"
+                "1"
               ]
             }
           },
@@ -701,14 +754,17 @@
           ],
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/members/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/members/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "members",
                 "99"
@@ -726,14 +782,17 @@
           "name": "/monitors",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ]
@@ -745,14 +804,17 @@
           "name": "/monitors:id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "1"
@@ -765,14 +827,17 @@
           "name": "/monitors?specialty=Esgrima Cardio",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors?specialty=Esgrima Cardio",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors?specialty=Esgrima Cardio",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ],
@@ -790,14 +855,17 @@
           "name": "/monitors?available=false",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors?available=false",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors?available=false",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ],
@@ -815,14 +883,17 @@
           "name": "/monitors?name=Will&available=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors?name=Will&available=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors?name=Will&available=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ],
@@ -844,14 +915,17 @@
           "name": "/monitors:id (NOT FOUND)",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "99"
@@ -864,7 +938,12 @@
           "name": "/monitors",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Test Monitor\",\n    \"dni\": \"12345678A\",\n    \"hireDate\": \"2024-01-01\",\n    \"salary\": 2000,\n    \"available\": true,\n    \"specialty\": \"Yoga\"\n}",
@@ -875,12 +954,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/monitors",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ]
@@ -892,7 +969,12 @@
           "name": "/monitors (INVALID DATA)",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"dni\": \"1\",\n    \"hireDate\": \"2025-05-25\",\n    \"salary\": -5,\n    \"available\": true,\n    \"specialty\": \"Programar\"\n}",
@@ -903,12 +985,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/monitors",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors"
               ]
@@ -920,7 +1000,12 @@
           "name": "/monitors:id",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
@@ -931,12 +1016,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/monitors/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "1"
@@ -949,7 +1032,12 @@
           "name": "/monitors:id (INVALID DATA)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"\",\n  \"dni\": \"987654321A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": -2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
@@ -960,12 +1048,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/monitors/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "1"
@@ -978,7 +1064,12 @@
           "name": "/monitors:id (NOT FOUND)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"Marcos\",\n  \"dni\": \"98765432A\",\n  \"hireDate\": \"2023-01-15\",\n  \"salary\": 2200.0,\n  \"available\": false,\n  \"specialty\": \"Peso libre\"\n}",
@@ -989,12 +1080,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/monitors/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "99"
@@ -1007,14 +1096,17 @@
           "name": "/monitors:id",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "1"
@@ -1027,14 +1119,17 @@
           "name": "/monitors:id (NOT FOUND)",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/monitors/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/monitors/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "monitors",
                 "99"
@@ -1052,14 +1147,17 @@
           "name": "/activities",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ]
@@ -1071,14 +1169,17 @@
           "name": "/activities:id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "1"
@@ -1091,14 +1192,17 @@
           "name": "/activities?name=Siesta",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities?name=Siesta",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities?name=Siesta",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ],
@@ -1116,14 +1220,17 @@
           "name": "/activities?name=Espada&active=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities?name=Espada&active=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities?name=Espada&active=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ],
@@ -1145,14 +1252,17 @@
           "name": "/activities?name=Martillo&active=true&minCapacity=20",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities?name=Martillo&active=true&minCapacity=20",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities?name=Martillo&active=true&minCapacity=20",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ],
@@ -1178,14 +1288,17 @@
           "name": "/activities:id (NOT FOUND)",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "99"
@@ -1198,7 +1311,12 @@
           "name": "/activities",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Test Activity\",\n    \"description\": \"Test description\",\n    \"capacity\": 20,\n    \"durationMinutes\": 60,\n    \"active\": true,\n    \"pricePerSession\": 5.0,\n    \"monitorId\": 1\n}",
@@ -1209,12 +1327,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/activities",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ]
@@ -1226,7 +1342,12 @@
           "name": "/activities (INVALID DATA)",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"description\": \"a navegar!\",\n    \"capacity\": 0,\n    \"durationMinutes\": 0,\n    \"active\": false,\n    \"pricePerSession\": -1,\n    \"monitorId\": \"\"\n}",
@@ -1237,12 +1358,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/activities",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities"
               ]
@@ -1254,7 +1373,12 @@
           "name": "/activities:id",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
@@ -1265,12 +1389,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/activities/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "1"
@@ -1283,7 +1405,12 @@
           "name": "/activities:id (FIELD ADDED - v2)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"active\": true,\n    \"durationMinutes\": 90,\n    \"monitorId\": 1\n}",
@@ -1294,12 +1421,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/v2/activities/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/v2/activities/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "v2",
                 "activities",
@@ -1313,7 +1438,12 @@
           "name": "/activities:id (INVALID DATA)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 0,\n    \"durationMinutes\": 1,\n    \"active\": true,\n    \"pricePerSession\": -8,\n    \"monitorId\": \"\"\n}",
@@ -1324,12 +1454,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/activities/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "1"
@@ -1342,7 +1470,12 @@
           "name": "/activities:id (NOT FOUND)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"name\": \"Yoga Avanzado\",\n    \"description\": \"Ahora mas intenso\",\n    \"capacity\": 25,\n    \"durationMinutes\": 90,\n    \"active\": true,\n    \"pricePerSession\": 8.50,\n    \"monitorId\": 1\n}",
@@ -1353,12 +1486,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/activities/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "99"
@@ -1371,14 +1502,17 @@
           "name": "/activities:id",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "1"
@@ -1391,14 +1525,17 @@
           "name": "/activities:id (NOT FOUND)",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/activities/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/activities/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "activities",
                 "99"
@@ -1416,14 +1553,17 @@
           "name": "/bookings",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ]
@@ -1435,14 +1575,17 @@
           "name": "/bookings:id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "1"
@@ -1455,14 +1598,17 @@
           "name": "/bookings?memberId=1",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings?memberId=1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings?memberId=1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ],
@@ -1480,14 +1626,17 @@
           "name": "/bookings?memberId=1&attended=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings?memberId=1&attended=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings?memberId=1&attended=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ],
@@ -1509,14 +1658,17 @@
           "name": "/bookings?memberId=1&attended=false&activityId=1",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings?memberId=1&attended=false&activityId=1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings?memberId=1&attended=false&activityId=1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ],
@@ -1542,14 +1694,17 @@
           "name": "/bookings:id (NOT FOUND)",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "99"
@@ -1562,7 +1717,12 @@
           "name": "/bookings",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Excelente clase\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
@@ -1573,12 +1733,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/bookings",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ]
@@ -1590,7 +1748,12 @@
           "name": "/bookings (INVALID DATA)",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
@@ -1601,12 +1764,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/bookings",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings"
               ]
@@ -1618,7 +1779,12 @@
           "name": "/bookings:id",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado! Muy intensa.\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
@@ -1629,12 +1795,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/bookings/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "1"
@@ -1647,7 +1811,12 @@
           "name": "/bookings:id (INVALID DATA)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": null,\n    \"attended\": true,\n    \"reviewNote\": 0,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": -9.50,\n    \"memberId\": \"\",\n    \"activityId\": \"\"\n}",
@@ -1658,12 +1827,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/bookings/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "1"
@@ -1676,7 +1843,12 @@
           "name": "/bookings:id (NOT FOUND)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"bookingDate\": \"2026-06-01\",\n    \"attended\": true,\n    \"reviewNote\": 5,\n    \"reviewText\": \"Me ha encantado!\",\n    \"pricePaid\": 9.50,\n    \"memberId\": 1,\n    \"activityId\": 1\n}",
@@ -1687,12 +1859,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/bookings/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "99"
@@ -1705,14 +1875,17 @@
           "name": "/bookings:id",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "1"
@@ -1725,14 +1898,17 @@
           "name": "/bookings:id (NOT FOUND)",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/bookings/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/bookings/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "bookings",
                 "99"
@@ -1750,14 +1926,17 @@
           "name": "/subscriptions",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ]
@@ -1769,14 +1948,17 @@
           "name": "/subscriptions:id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "1"
@@ -1789,14 +1971,17 @@
           "name": "/subscriptions?memberId=1",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions?memberId=1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ],
@@ -1814,14 +1999,17 @@
           "name": "/subscriptions?memberId=1&active=true",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=1&active=true",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions?memberId=1&active=true",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ],
@@ -1843,14 +2031,17 @@
           "name": "/subscriptions?memberId=1&active=true&type=MONTHLY",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions?memberId=1&active=true&type=MONTHLY",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions?memberId=1&active=true&type=MONTHLY",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ],
@@ -1876,14 +2067,17 @@
           "name": "/subscriptions:id (NOT FOUND)",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "99"
@@ -1896,7 +2090,12 @@
           "name": "/subscriptions",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 29.99,\n    \"active\": true,\n    \"autoRenewal\": true,\n    \"memberId\": 1\n}",
@@ -1907,12 +2106,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ]
@@ -1924,7 +2121,12 @@
           "name": "/subscriptions (INVALID DATA)",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
@@ -1935,12 +2137,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions"
               ]
@@ -1952,7 +2152,12 @@
           "name": "/subscriptions:id",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
@@ -1963,12 +2168,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "1"
@@ -1981,7 +2184,12 @@
           "name": "/subscriptions:id (INVALID DATA)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"trimestral\",\n    \"startDate\": null,\n    \"endDate\": null,\n    \"price\": -8,\n    \"active\": false,\n    \"autoRenewal\": false,\n    \"memberId\": \"\"\n}",
@@ -1992,12 +2200,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "1"
@@ -2010,7 +2216,12 @@
           "name": "/subscriptions:id (NOT FOUND)",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"type\": \"MONTHLY\",\n    \"startDate\": \"2026-01-01\",\n    \"endDate\": \"2026-02-01\",\n    \"price\": 35.50,\n    \"active\": true,\n    \"autoRenewal\": false,\n    \"memberId\": 1\n}",
@@ -2021,12 +2232,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/subscriptions/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "99"
@@ -2039,14 +2248,17 @@
           "name": "/subscriptions:id",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions/1",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/1",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "1"
@@ -2059,14 +2271,17 @@
           "name": "/subscriptions:id (NOT FOUND)",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
             "url": {
-              "raw": "http://localhost:8080/subscriptions/99",
-              "protocol": "http",
+              "raw": "{{GATEWAY}}/subscriptions/99",
               "host": [
-                "localhost"
+                "{{GATEWAY}}"
               ],
-              "port": "8080",
               "path": [
                 "subscriptions",
                 "99"
@@ -2076,6 +2291,145 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "V2 Endpoints Copy",
+      "item": [
+        {
+          "name": "GET /v2/members",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{GATEWAY}}/v2/members",
+              "host": [
+                "{{GATEWAY}}"
+              ],
+              "path": [
+                "v2",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /v2/members (email mandatory)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Will\",\n  \"lastName\": \"Turner\",\n  \"birthDate\": \"1985-03-20\",\n  \"weight\": 75,\n  \"email\": \"will@bstrong.com\",\n  \"active\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{GATEWAY}}/v2/members",
+              "host": [
+                "{{GATEWAY}}"
+              ],
+              "path": [
+                "v2",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT /v2/activities/1 (totalBookings added)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Yoga Avanzado V2\",\n  \"description\": \"Clase intensa con conteo de reservas\",\n  \"capacity\": 25,\n  \"active\": true,\n  \"durationMinutes\": 90,\n  \"monitorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{GATEWAY}}/v2/activities/1",
+              "host": [
+                "{{GATEWAY}}"
+              ],
+              "path": [
+                "v2",
+                "activities",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /v2/members/1 (returns confirmation)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{GATEWAY}}/v2/members/1",
+              "host": [
+                "{{GATEWAY}}"
+              ],
+              "path": [
+                "v2",
+                "members",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "GATEWAY",
+      "value": "http://gateway.local.gd:8080/bstrong-org/bstrong-api/1.0"
+    },
+    {
+      "key": "API_KEY",
+      "value": "2dc5d0f7-7bf6-4020-b4d5-0100f68dbbc5"
+    },
+    {
+      "key": "newMemberId",
+      "value": ""
     }
   ]
 }

@@ -2,7 +2,9 @@ package com.gym.bstrong.service;
 
 import com.gym.bstrong.domain.Member;
 import com.gym.bstrong.dto.MemberInDto;
+import com.gym.bstrong.dto.MemberInDtoV2;
 import com.gym.bstrong.dto.MemberOutDto;
+import com.gym.bstrong.dto.MemberOutDtoV2;
 import com.gym.bstrong.exception.MemberNotFoundException;
 import com.gym.bstrong.repository.MemberRepository;
 import org.modelmapper.ModelMapper;
@@ -66,6 +68,29 @@ public class MemberService {
         Member member = memberRepository.findById(id)
                 .orElseThrow(MemberNotFoundException::new);
         memberRepository.delete(member);
+    }
+
+    public List<MemberOutDtoV2> findAllV2(String firstName, String lastName, Boolean active) {
+        List<Member> members;
+        if (firstName == null && lastName == null && active == null) {
+            members = memberRepository.findAll();
+        } else {
+            members = memberRepository.findByFilters(firstName, lastName, active);
+        }
+        return modelMapper.map(members, new TypeToken<List<MemberOutDtoV2>>() {}.getType());
+    }
+
+    public MemberOutDtoV2 findByIdV2(long id) throws MemberNotFoundException {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(MemberNotFoundException::new);
+        return modelMapper.map(member, MemberOutDtoV2.class);
+    }
+
+    public MemberOutDtoV2 addMemberV2(MemberInDtoV2 memberInDtoV2) {
+        Member member = modelMapper.map(memberInDtoV2, Member.class);
+        member.setRegistrationDate(LocalDate.now());
+        Member newMember = memberRepository.save(member);
+        return modelMapper.map(newMember, MemberOutDtoV2.class);
     }
 
 }
